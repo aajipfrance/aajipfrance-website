@@ -4,6 +4,24 @@ const BLOG_CONFIG = {
     defaultSort: 'date-desc'
 };
 
+// Fonction pour fermer la bande défilante des dons
+function closeDonationBanner() {
+    const banner = document.querySelector('.donation-banner');
+    if (banner) {
+        banner.classList.add('hidden');
+        // Optionnel : sauvegarder dans localStorage pour ne pas la remontrer
+        localStorage.setItem('donationBannerClosed', 'true');
+    }
+}
+
+// Vérifier si la bande défilante doit être affichée
+document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.querySelector('.donation-banner');
+    if (banner && localStorage.getItem('donationBannerClosed') === 'true') {
+        banner.style.display = 'none';
+    }
+});
+
 // État global du blog
 let blogState = {
     articles: [],
@@ -182,8 +200,8 @@ function createArticleCard(article) {
     
     return `
         <article class="blog-card">
-            <div class="blog-image">
-                <img src="${article.image}" alt="${article.title}">
+            <div class="blog-icon">
+                <i class="${article.icon}"></i>
                 <div class="blog-category">${article.category}</div>
             </div>
             <div class="blog-content">
@@ -272,7 +290,9 @@ function renderRecentPosts() {
     
     recentPosts.innerHTML = recentArticles.map(article => `
         <div class="recent-post">
-            <img src="${article.image}" alt="${article.title}" class="recent-post-image">
+            <div class="recent-post-icon">
+                <i class="${article.icon}"></i>
+            </div>
             <div class="recent-post-content">
                 <h4><a href="article.html?id=${article.id}">${article.title}</a></h4>
                 <div class="date">${formatDate(article.date)}</div>

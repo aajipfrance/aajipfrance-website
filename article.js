@@ -2,6 +2,24 @@
 let allArticles = [];
 let currentArticle = null;
 
+// Fonction pour fermer la bande défilante des dons
+function closeDonationBanner() {
+    const banner = document.querySelector('.donation-banner');
+    if (banner) {
+        banner.classList.add('hidden');
+        // Optionnel : sauvegarder dans localStorage pour ne pas la remontrer
+        localStorage.setItem('donationBannerClosed', 'true');
+    }
+}
+
+// Vérifier si la bande défilante doit être affichée
+document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.querySelector('.donation-banner');
+    if (banner && localStorage.getItem('donationBannerClosed') === 'true') {
+        banner.style.display = 'none';
+    }
+});
+
 // Initialisation
 document.addEventListener('DOMContentLoaded', function() {
     loadArticles();
@@ -80,8 +98,8 @@ function createArticleHTML(article) {
             <p class="article-excerpt">${article.excerpt}</p>
         </header>
         
-        <div class="article-image">
-            <img src="${article.image}" alt="${article.title}">
+        <div class="article-icon">
+            <i class="${article.icon}"></i>
         </div>
         
         <div class="article-body">
@@ -132,8 +150,8 @@ function displayRelatedArticles(currentArticle) {
         } else {
             relatedContainer.innerHTML = relatedArticles.map(article => `
                 <article class="related-article">
-                    <div class="related-image">
-                        <img src="${article.image}" alt="${article.title}">
+                    <div class="related-icon">
+                        <i class="${article.icon}"></i>
                     </div>
                     <div class="related-content">
                         <h4><a href="article.html?id=${article.id}">${article.title}</a></h4>

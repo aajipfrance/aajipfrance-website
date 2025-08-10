@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - AAJIP-FRANCE | Association d'Accompagnement Juridique et d'Insertion Professionnelle</title>
+    <meta name="description" content="Contactez l'AAJIP-FRANCE. Rejoignez notre association et participez à notre mission d'accompagnement et d'insertion. Formulaire de contact et informations.">
+    <meta name="keywords" content="AAJIP-FRANCE, contact, rejoindre, association, accompagnement, insertion, bénévole, France">
+    <meta name="author" content="AAJIP-FRANCE">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="geo.region" content="FR">
+    <meta name="geo.placename" content="France">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aajipfrance.fr/contact.html">
+    <meta property="og:title" content="Contact - AAJIP-FRANCE | Association d'Accompagnement Juridique et d'Insertion Professionnelle">
+    <meta property="og:description" content="Contactez l'AAJIP-FRANCE. Rejoignez notre association et participez à notre mission d'accompagnement et d'insertion.">
+    <meta property="og:image" content="https://aajipfrance.fr/logo.jpg">
+    <meta property="og:site_name" content="AAJIP-FRANCE">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aajipfrance.fr/contact.html">
+    <meta property="twitter:title" content="Contact - AAJIP-FRANCE | Association d'Accompagnement Juridique et d'Insertion Professionnelle">
+    <meta property="twitter:description" content="Contactez l'AAJIP-FRANCE. Rejoignez notre association et participez à notre mission d'accompagnement et d'insertion.">
+    <meta property="twitter:image" content="https://aajipfrance.fr/logo.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://aajipfrance.fr/contact.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Contact - AAJIP-FRANCE",
+        "description": "Contactez l'AAJIP-FRANCE. Rejoignez notre association et participez à notre mission d'accompagnement et d'insertion",
+        "url": "https://aajipfrance.fr/contact.html",
+        "mainEntity": {
+            "@type": "ContactPage",
+            "name": "Page de contact AAJIP-FRANCE",
+            "description": "Page de contact pour l'association AAJIP-FRANCE"
+        }
+    }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="config.js"></script>
+</head>
+<body>
+    <!-- Bande défilante pour les dons -->
+    <div class="donation-banner">
+        <div class="donation-banner-content">
+            <div class="donation-banner-text">
+                <i class="fas fa-heart"></i>
+                <span>Soutenez notre mission ! Chaque don compte pour l'accompagnement et l'insertion</span>
+            </div>
+            <a href="https://www.leetchi.com/fr/c/aajip-france-1322704" class="donation-banner-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-gift"></i>
+                Faire un don
+            </a>
+            <button class="donation-banner-close" onclick="closeDonationBanner()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.jpg" alt="Logo AAJIP-FRANCE" class="logo">
+                <span class="logo-text">AAJIP-FRANCE</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="a-propos.html" class="nav-link">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="missions.html" class="nav-link">Nos missions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="actions.html" class="nav-link">Nos actions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donation.html" class="nav-link">Faire un don</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Nous rejoindre</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Rejoindre l'AAJIP-FRANCE</h3>
+                    <p>
+                        Rejoindre l'AAJIP-FRANCE, c'est participer à un projet humain et collectif, 
+                        ancré dans les réalités du terrain, au service de la dignité et de l'émancipation 
+                        de toutes et tous.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p><a href="tel:+33624671692" style="color: #c7d2fe; text-decoration: none;">+33 6 24 67 16 92</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:aajipfrance@gmail.com" style="color: #c7d2fe; text-decoration: none;">aajipfrance@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Nos membres</h4>
+                                <p>Bénévoles engagés et responsables dédiés</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <h4>Nos partenaires</h4>
+                                <p>Institutions et associations partenaires</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <h4>Notre engagement</h4>
+                                <p>Au service de la dignité et de l'émancipation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Nous contacter</h3>
+                    <form class="form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Votre téléphone">
+                        </div>
+                        <div class="form-group">
+                            <select id="subject" name="subject" required>
+                                <option value="">Sujet de votre message</option>
+                                <option value="accompagnement">Demande d'accompagnement</option>
+                                <option value="benevolat">Devenir bénévole</option>
+                                <option value="partenariat">Partenariat</option>
+                                <option value="information">Demande d'information</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo.jpg" alt="Logo AAJIP-FRANCE" class="footer-logo-img">
+                        <span class="footer-logo-text">AAJIP-FRANCE</span>
+                    </div>
+                    <p>Association d'Accompagnement Juridique et d'Insertion Professionnelle en France</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Nos missions</h4>
+                    <ul>
+                        <li><a href="missions.html">Accompagnement juridique</a></li>
+                        <li><a href="missions.html">Insertion professionnelle</a></li>
+                        <li><a href="missions.html">Accompagnement social</a></li>
+                        <li><a href="missions.html">Formation et éducation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Nos valeurs</h4>
+                    <ul>
+                        <li>Solidarité</li>
+                        <li>Inclusion</li>
+                        <li>Défense des droits</li>
+                        <li>Transparence</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Association régie par la loi de 1901</p>
+                    <p>Organisation à but non lucratif</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/15rZnxFqbb/?mibextid=wwXIfr" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/aajipfrance?utm_source=qr&igsh=MW5kcjNrZjRwczc4NQ==" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/aajip-france-920aa1378/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://tiktok.com/@aajipfrance" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://x.com/aajipfranc80809?t=KrN-_pfWvxEJC4HGkau52w&s=08" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/@aajipfrance" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AAJIP-FRANCE. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="pages.js"></script>
+</body>
+</html>

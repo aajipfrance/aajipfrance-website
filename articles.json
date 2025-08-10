@@ -8,7 +8,7 @@
       "author": "Équipe AAJIP",
       "date": "2024-12-20",
       "category": "Actualités",
-      "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=250&fit=crop",
+      "icon": "fas fa-rocket",
       "tags": ["nouveaux programmes", "2024", "innovation", "accompagnement"],
       "readTime": "8 min"
     },
@@ -20,7 +20,7 @@
       "author": "Marie D. (témoignage recueilli par l'équipe AAJIP)",
       "date": "2024-12-18",
       "category": "Témoignages",
-      "image": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=250&fit=crop",
+      "icon": "fas fa-user-check",
       "tags": ["témoignage", "insertion", "femme", "réussite"],
       "readTime": "6 min"
     },
@@ -32,7 +32,7 @@
       "author": "Équipe AAJIP",
       "date": "2024-12-15",
       "category": "Accompagnement",
-      "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=400&h=250&fit=crop",
+      "icon": "fas fa-balance-scale",
       "tags": ["juridique", "accompagnement", "droits", "autonomie"],
       "readTime": "7 min"
     },
@@ -44,7 +44,7 @@
       "author": "Équipe AAJIP",
       "date": "2024-12-10",
       "category": "Insertion",
-      "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=250&fit=crop",
+      "icon": "fas fa-briefcase",
       "tags": ["emploi", "insertion", "témoignages", "réussite"],
       "readTime": "8 min"
     },
@@ -56,7 +56,7 @@
       "author": "Équipe AAJIP",
       "date": "2024-12-05",
       "category": "Formation",
-      "image": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=250&fit=crop",
+      "icon": "fas fa-graduation-cap",
       "tags": ["formation", "autonomie", "citoyenneté", "linguistique"],
       "readTime": "7 min"
     },
@@ -68,7 +68,7 @@
       "author": "Équipe AAJIP",
       "date": "2024-11-28",
       "category": "Partenariats",
-      "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=250&fit=crop",
+      "icon": "fas fa-handshake",
       "tags": ["partenariats", "institutions", "réseau", "collaboration"],
       "readTime": "8 min"
     },
@@ -80,7 +80,7 @@
       "author": "Équipe AAJIP",
       "date": "2024-11-20",
       "category": "Bénévolat",
-      "image": "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=400&h=250&fit=crop",
+      "icon": "fas fa-heart",
       "tags": ["bénévolat", "engagement", "solidarité", "citoyenneté"],
       "readTime": "9 min"
     },
@@ -92,7 +92,7 @@
       "author": "Équipe AAJIP",
       "date": "2024-11-15",
       "category": "Impact",
-      "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=250&fit=crop",
+      "icon": "fas fa-chart-line",
       "tags": ["impact", "résultats", "statistiques", "réussite"],
       "readTime": "8 min"
     },
@@ -104,7 +104,7 @@
       "author": "Équipe AAJIP",
       "date": "2024-11-10",
       "category": "Événements",
-      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=250&fit=crop",
+      "icon": "fas fa-calendar-alt",
       "tags": ["événements", "conférences", "2024", "sensibilisation"],
       "readTime": "6 min"
     },
@@ -116,7 +116,7 @@
       "author": "Équipe AAJIP",
       "date": "2024-12-25",
       "category": "Accompagnement",
-      "image": "https://images.unsplash.com/photo-1484712361471-05a7210e55c0?w=400&h=250&fit=crop",
+      "icon": "fas fa-users",
       "tags": ["familles", "migration", "intégration", "accompagnement"],
       "readTime": "10 min"
     },
@@ -128,7 +128,7 @@
       "author": "Ahmed B. (témoignage recueilli par l'équipe AAJIP)",
       "date": "2024-12-22",
       "category": "Témoignages",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
+      "icon": "fas fa-user-graduate",
       "tags": ["témoignage", "insertion", "migration", "réussite", "ingénieur"],
       "readTime": "8 min"
     },
@@ -140,7 +140,7 @@
       "author": "Équipe AAJIP",
       "date": "2025-01-15",
       "category": "Événements",
-      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=250&fit=crop",
+      "icon": "fas fa-star",
       "tags": ["événement", "solidarité", "insertion", "gratuit", "ateliers"],
       "readTime": "7 min"
     },
@@ -152,7 +152,7 @@
       "author": "Équipe AAJIP",
       "date": "2025-01-10",
       "category": "Formation",
-      "image": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=250&fit=crop",
+      "icon": "fas fa-clock",
       "tags": ["ateliers", "droits", "formation", "gratuit", "régulier"],
       "readTime": "8 min"
     },
@@ -164,7 +164,7 @@
       "author": "Équipe AAJIP",
       "date": "2025-01-05",
       "category": "Actualités",
-      "image": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=250&fit=crop",
+      "icon": "fas fa-share-alt",
       "tags": [
         "numérique",
         "réseaux sociaux",
@@ -182,7 +182,7 @@
       "author": "Équipe AAJIP",
       "date": "2025-01-01",
       "category": "Actualités",
-      "image": "https://images.unsplash.com/photo-1484712361471-05a7210e55c0?w=400&h=250&fit=crop",
+      "icon": "fas fa-gift",
       "tags": ["collecte", "solidarité", "accueil", "kits", "médiatisation"],
       "readTime": "10 min"
     }

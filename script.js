@@ -7,6 +7,24 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
+// Fonction pour fermer la bande défilante des dons
+function closeDonationBanner() {
+    const banner = document.querySelector('.donation-banner');
+    if (banner) {
+        banner.classList.add('hidden');
+        // Optionnel : sauvegarder dans localStorage pour ne pas la remontrer
+        localStorage.setItem('donationBannerClosed', 'true');
+    }
+}
+
+// Vérifier si la bande défilante doit être affichée
+document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.querySelector('.donation-banner');
+    if (banner && localStorage.getItem('donationBannerClosed') === 'true') {
+        banner.style.display = 'none';
+    }
+});
+
 // Fermer le menu mobile en cliquant sur un lien
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger.classList.remove('active');
@@ -349,8 +367,8 @@ async function loadHomepageBlogArticles() {
             const formattedDate = formatDate(article.date);
             return `
                 <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="${article.image}" alt="${article.title}">
+                    <div class="blog-icon">
+                        <i class="${article.icon}"></i>
                         <div class="blog-category">${article.category}</div>
                     </div>
                     <div class="blog-content">
