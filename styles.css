@@ -36,6 +36,11 @@ body {
   margin-top: 50px;
 }
 
+/* Navigation quand la barre de don est cachée */
+.navbar.no-donation-banner {
+  margin-top: 0;
+}
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
