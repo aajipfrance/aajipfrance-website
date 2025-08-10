@@ -250,7 +250,7 @@ function showError(message) {
                 <i class="fas fa-exclamation-triangle"></i>
                 <h2>Erreur</h2>
                 <p>${message}</p>
-                <a href="blog.html" class="btn btn-primary">Retour au blog</a>
+                <a href="/blog" class="btn btn-primary">Retour au blog</a>
             </div>
         `;
     }
