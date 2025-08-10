@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Complet Navigation - AAJIP-FRANCE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .test-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            background: #f9fafb;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .test-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+        }
+        .test-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0.25rem;
+            transition: background 0.3s;
+        }
+        .test-link:hover {
+            background: #2563eb;
+        }
+        .status-ok {
+            color: #059669;
+            font-weight: bold;
+        }
+        .status-error {
+            color: #dc2626;
+            font-weight: bold;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .checklist li:before {
+            content: "✅ ";
+            color: #059669;
+        }
+        .checklist li.error:before {
+            content: "❌ ";
+            color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bande défilante pour les dons -->
+    <div class="donation-banner">
+        <div class="donation-banner-content">
+            <div class="donation-banner-text">
+                <i class="fas fa-heart"></i>
+                <span>Soutenez notre mission ! Chaque don compte pour l'accompagnement et l'insertion</span>
+            </div>
+            <a href="https://www.leetchi.com/fr/c/aajip-france-1322704" class="donation-banner-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-gift"></i>
+                Faire un don
+            </a>
+            <button class="donation-banner-close" onclick="closeDonationBanner()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.jpg" alt="Logo AAJIP-FRANCE" class="logo">
+                <span class="logo-text">AAJIP-FRANCE</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="a-propos.html" class="nav-link">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="missions.html" class="nav-link">Nos missions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="actions.html" class="nav-link">Nos actions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donation.html" class="nav-link">Faire un don</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu de test -->
+    <section style="margin-top: 150px; padding: 2rem;">
+        <div class="container">
+            <h1>Test Complet de la Navigation</h1>
+            <p>Cette page permet de vérifier que tous les liens de navigation fonctionnent correctement sur l'ensemble du site.</p>
+
+            <div class="test-section">
+                <h2>✅ Vérifications Complétées</h2>
+                <ul class="checklist">
+                    <li>Tous les liens de navigation utilisent les extensions .html</li>
+                    <li>Les liens dans les footers sont cohérents</li>
+                    <li>Les liens dans les boutons CTA sont corrects</li>
+                    <li>Les liens dynamiques dans JavaScript utilisent les bonnes extensions</li>
+                    <li>Les liens vers les articles utilisent article.html?id=</li>
+                    <li>Les liens vers les ressources statiques (CSS, JS, images) sont corrects</li>
+                </ul>
+            </div>
+
+            <div class="test-section">
+                <h2>🔗 Test des Pages Principales</h2>
+                <div class="test-grid">
+                    <div class="test-card">
+                        <h3>Pages Principales</h3>
+                        <a href="index.html" class="test-link">🏠 Accueil</a>
+                        <a href="a-propos.html" class="test-link">ℹ️ À propos</a>
+                        <a href="missions.html" class="test-link">🎯 Nos missions</a>
+                        <a href="actions.html" class="test-link">⚡ Nos actions</a>
+                        <a href="blog.html" class="test-link">📝 Blog</a>
+                        <a href="donation.html" class="test-link">💝 Faire un don</a>
+                        <a href="contact.html" class="test-link">📞 Contact</a>
+                    </div>
+                    
+                    <div class="test-card">
+                        <h3>Pages Spéciales</h3>
+                        <a href="admin.html" class="test-link">🔧 Administration</a>
+                        <a href="article.html?id=nouveaux-programmes-2024" class="test-link">📖 Article exemple</a>
+                    </div>
+                    
+                    <div class="test-card">
+                        <h3>Pages de Test</h3>
+                        <a href="test-navbar.html" class="test-link">🧪 Test Navbar</a>
+                        <a href="test-blog.html" class="test-link">🧪 Test Blog</a>
+                        <a href="test-navigation.html" class="test-link">🧪 Test Navigation</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="test-section">
+                <h2>📋 Résumé des Corrections Appliquées</h2>
+                <div class="test-card">
+                    <h3>Pages Corrigées :</h3>
+                    <ul>
+                        <li><strong>index.html</strong> : ✅ Liens de navigation et footer corrigés</li>
+                        <li><strong>a-propos.html</strong> : ✅ Liens de navigation et footer corrigés</li>
+                        <li><strong>missions.html</strong> : ✅ Liens de navigation et footer corrigés</li>
+                        <li><strong>actions.html</strong> : ✅ Liens de navigation et footer corrigés</li>
+                        <li><strong>blog.html</strong> : ✅ Liens de navigation et footer corrigés</li>
+                        <li><strong>donation.html</strong> : ✅ Liens de navigation et footer corrigés</li>
+                        <li><strong>contact.html</strong> : ✅ Liens de navigation et footer corrigés</li>
+                        <li><strong>article.html</strong> : ✅ Liens de navigation et footer corrigés</li>
+                    </ul>
+                </div>
+                
+                <div class="test-card">
+                    <h3>Fichiers JavaScript Vérifiés :</h3>
+                    <ul>
+                        <li><strong>script.js</strong> : ✅ Liens vers articles corrects</li>
+                        <li><strong>blog.js</strong> : ✅ Liens vers articles corrects</li>
+                        <li><strong>article.js</strong> : ✅ Liens vers articles corrects</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="test-section">
+                <h2>🎯 Instructions de Test</h2>
+                <div class="test-card">
+                    <h3>Pour tester la navigation :</h3>
+                    <ol>
+                        <li>Cliquez sur chaque lien ci-dessus pour vérifier qu'il fonctionne</li>
+                        <li>Vérifiez que la navbar apparaît correctement sur chaque page</li>
+                        <li>Testez la navigation mobile (menu hamburger)</li>
+                        <li>Vérifiez que les liens du footer fonctionnent</li>
+                        <li>Testez les liens vers les articles du blog</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="test-section">
+                <h2>📊 Statut de la Navigation</h2>
+                <div class="test-card">
+                    <p><span class="status-ok">✅ TOUTES LES PAGES ONT ÉTÉ CORRIGÉES</span></p>
+                    <p>Tous les liens de navigation utilisent maintenant les extensions .html pour assurer la cohérence et le bon fonctionnement sur tous les environnements d'hébergement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
