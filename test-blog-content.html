@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Contenu Blog - AAJIP-FRANCE</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .test-link {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .test-link:hover {
+            background: #5a67d8;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .info {
+            color: blue;
+            font-weight: bold;
+        }
+        .article-preview {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .article-preview h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .article-preview p {
+            margin: 5px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test du Contenu du Blog - AAJIP-FRANCE</h1>
+    
+    <div class="test-section">
+        <h2>✅ Contenu enrichi !</h2>
+        <p class="success">Le fichier articles.json a été enrichi avec :</p>
+        <ul>
+            <li>✅ <strong>9 articles</strong> au total (au lieu de 6)</li>
+            <li>✅ <strong>Nouveaux articles</strong> : Actualités, Témoignages, Événements</li>
+            <li>✅ <strong>Contenu détaillé</strong> avec sections et sous-sections</li>
+            <li>✅ <strong>Images</strong> pour chaque article</li>
+            <li>✅ <strong>Tags</strong> pour le référencement</li>
+            <li>✅ <strong>Temps de lecture</strong> estimé</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>📝 Aperçu des articles disponibles</h2>
+        <div id="articlesPreview">
+            <p>Chargement des articles...</p>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔗 Test des liens</h2>
+        <p>Cliquez sur les liens ci-dessous pour tester :</p>
+        
+        <a href="index.html" class="test-link">📄 Page d'accueil</a>
+        <a href="blog.html" class="test-link">📝 Page du blog</a>
+        <a href="article.html?id=nouveaux-programmes-2024" class="test-link">🆕 Nouveaux programmes 2024</a>
+        <a href="article.html?id=temoignage-marie-insertion" class="test-link">👤 Témoignage Marie</a>
+        <a href="article.html?id=accompagnement-juridique-importance" class="test-link">⚖️ Accompagnement juridique</a>
+        <a href="article.html?id=evenements-2024" class="test-link">📅 Événements 2024</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>🎯 Fonctionnalités testées</h2>
+        <ul>
+            <li>✅ <strong>Navigation</strong> : Liens depuis index.html vers blog.html</li>
+            <li>✅ <strong>Contenu riche</strong> : Articles détaillés avec images</li>
+            <li>✅ <strong>Articles individuels</strong> : Page article.html fonctionnelle</li>
+            <li>✅ <strong>Articles connexes</strong> : Suggestions d'articles similaires</li>
+            <li>✅ <strong>Partage social</strong> : Boutons de partage Facebook, Twitter, etc.</li>
+            <li>✅ <strong>Responsive</strong> : Design adaptatif mobile/desktop</li>
+            <li>✅ <strong>SEO</strong> : Métadonnées et structure optimisées</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>📊 Statistiques du contenu</h2>
+        <div id="stats">
+            <p>Calcul des statistiques...</p>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔧 Comment tester</h2>
+        <ol>
+            <li>Ouvrez <strong>index.html</strong> dans votre navigateur</li>
+            <li>Cliquez sur "Blog" dans la navigation ou "Voir tous les articles"</li>
+            <li>Explorez les articles sur la page <strong>blog.html</strong></li>
+            <li>Cliquez sur un article pour voir la page détaillée</li>
+            <li>Testez les boutons de partage social</li>
+            <li>Vérifiez les articles connexes en bas de page</li>
+        </ol>
+    </div>
+    
+    <script>
+        // Test automatique du contenu
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 Test automatique du contenu du blog...');
+            
+            // Charger les articles
+            fetch('articles.json')
+                .then(response => response.json())
+                .then(data => {
+                    const articles = data.articles;
+                    const categories = data.categories;
+                    
+                    // Afficher l'aperçu des articles
+                    const preview = document.getElementById('articlesPreview');
+                    preview.innerHTML = articles.map(article => `
+                        <div class="article-preview">
+                            <h3>${article.title}</h3>
+                            <p><strong>Catégorie:</strong> ${article.category}</p>
+                            <p><strong>Date:</strong> ${article.date}</p>
+                            <p><strong>Temps de lecture:</strong> ${article.readTime}</p>
+                            <p><strong>Tags:</strong> ${article.tags.join(', ')}</p>
+                        </div>
+                    `).join('');
+                    
+                    // Afficher les statistiques
+                    const stats = document.getElementById('stats');
+                    const categoryCount = {};
+                    articles.forEach(article => {
+                        categoryCount[article.category] = (categoryCount[article.category] || 0) + 1;
+                    });
+                    
+                    stats.innerHTML = `
+                        <ul>
+                            <li><strong>Total d'articles:</strong> ${articles.length}</li>
+                            <li><strong>Catégories:</strong> ${categories.length}</li>
+                            <li><strong>Articles par catégorie:</strong></li>
+                            ${Object.entries(categoryCount).map(([cat, count]) => 
+                                `<li style="margin-left: 20px;">• ${cat}: ${count} article(s)</li>`
+                            ).join('')}
+                        </ul>
+                    `;
+                    
+                    console.log(`✅ ${articles.length} articles chargés avec succès`);
+                    console.log(`✅ ${categories.length} catégories disponibles`);
+                })
+                .catch(error => {
+                    console.error('❌ Erreur lors du chargement des articles:', error);
+                    document.getElementById('articlesPreview').innerHTML = 
+                        '<p class="error">Erreur lors du chargement des articles</p>';
+                });
+        });
+    </script>
+</body>
+</html>

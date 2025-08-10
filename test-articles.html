@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Articles - AAJIP-FRANCE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .article-card {
+            border: 1px solid #eee;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .loading {
+            color: #666;
+            font-style: italic;
+        }
+        .error {
+            color: red;
+            background: #ffe6e6;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .success {
+            color: green;
+            background: #e6ffe6;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de chargement des articles</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Chargement direct du fichier JSON</h2>
+        <div id="jsonTest">Chargement...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Affichage des articles</h2>
+        <div id="articlesDisplay">Chargement...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: Informations de débogage</h2>
+        <div id="debugInfo">Chargement...</div>
+    </div>
+
+    <script>
+        // Test 1: Chargement direct du JSON
+        async function testJSONLoading() {
+            const jsonTest = document.getElementById('jsonTest');
+            try {
+                const response = await fetch('articles.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                const data = await response.json();
+                jsonTest.innerHTML = `
+                    <div class="success">
+                        ✅ Fichier JSON chargé avec succès<br>
+                        Nombre d'articles: ${data.articles ? data.articles.length : 0}<br>
+                        Nombre de catégories: ${data.categories ? data.categories.length : 0}
+                    </div>
+                `;
+                return data;
+            } catch (error) {
+                jsonTest.innerHTML = `
+                    <div class="error">
+                        ❌ Erreur lors du chargement du JSON: ${error.message}
+                    </div>
+                `;
+                return null;
+            }
+        }
+
+        // Test 2: Affichage des articles
+        async function testArticlesDisplay() {
+            const articlesDisplay = document.getElementById('articlesDisplay');
+            try {
+                const data = await testJSONLoading();
+                if (!data || !data.articles) {
+                    articlesDisplay.innerHTML = '<div class="error">❌ Aucune donnée d\'articles disponible</div>';
+                    return;
+                }
+
+                const articles = data.articles.slice(0, 3); // Afficher seulement les 3 premiers
+                const articlesHTML = articles.map(article => `
+                    <div class="article-card">
+                        <h3>${article.title}</h3>
+                        <p><strong>Date:</strong> ${article.date}</p>
+                        <p><strong>Catégorie:</strong> ${article.category}</p>
+                        <p><strong>Auteur:</strong> ${article.author}</p>
+                        <p><strong>Extrait:</strong> ${article.excerpt}</p>
+                        <p><strong>Image:</strong> ${article.image}</p>
+                    </div>
+                `).join('');
+
+                articlesDisplay.innerHTML = `
+                    <div class="success">
+                        ✅ Articles affichés avec succès (${articles.length} articles)
+                    </div>
+                    ${articlesHTML}
+                `;
+            } catch (error) {
+                articlesDisplay.innerHTML = `
+                    <div class="error">
+                        ❌ Erreur lors de l'affichage des articles: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        // Test 3: Informations de débogage
+        function showDebugInfo() {
+            const debugInfo = document.getElementById('debugInfo');
+            const info = {
+                userAgent: navigator.userAgent,
+                currentURL: window.location.href,
+                protocol: window.location.protocol,
+                hostname: window.location.hostname,
+                port: window.location.port,
+                pathname: window.location.pathname
+            };
+
+            debugInfo.innerHTML = `
+                <div class="success">
+                    <h3>Informations de débogage:</h3>
+                    <p><strong>URL actuelle:</strong> ${info.currentURL}</p>
+                    <p><strong>Protocole:</strong> ${info.protocol}</p>
+                    <p><strong>Hôte:</strong> ${info.hostname}</p>
+                    <p><strong>Port:</strong> ${info.port || 'défaut'}</p>
+                    <p><strong>Chemin:</strong> ${info.pathname}</p>
+                    <p><strong>User Agent:</strong> ${info.userAgent}</p>
+                </div>
+            `;
+        }
+
+        // Exécuter tous les tests
+        document.addEventListener('DOMContentLoaded', async () => {
+            showDebugInfo();
+            await testArticlesDisplay();
+        });
+    </script>
+</body>
+</html>

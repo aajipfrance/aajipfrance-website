@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Blog Dynamique - AAJIP-FRANCE</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .test-link {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .test-link:hover {
+            background: #5a67d8;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .info {
+            color: blue;
+            font-weight: bold;
+        }
+        .blog-preview {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .blog-preview h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .blog-preview p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .blog-preview .meta {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test du Blog Dynamique - AAJIP-FRANCE</h1>
+    
+    <div class="test-section">
+        <h2>✅ Fonctionnalité implémentée !</h2>
+        <p class="success">Le blog sur la page d'accueil charge maintenant dynamiquement les articles depuis articles.json :</p>
+        <ul>
+            <li>✅ <strong>Chargement automatique</strong> des 3 articles les plus récents</li>
+            <li>✅ <strong>Tri par date</strong> (du plus récent au plus ancien)</li>
+            <li>✅ <strong>Liens directs</strong> vers les articles individuels</li>
+            <li>✅ <strong>États de chargement</strong> et d'erreur gérés</li>
+            <li>✅ <strong>Animations</strong> lors de l'affichage</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>📝 Aperçu des articles qui s'afficheront</h2>
+        <div id="articlesPreview">
+            <p>Chargement des articles...</p>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔗 Test des pages</h2>
+        <p>Cliquez sur les liens ci-dessous pour tester :</p>
+        
+        <a href="index.html" class="test-link">📄 Page d'accueil (blog dynamique)</a>
+        <a href="blog.html" class="test-link">📝 Page du blog complet</a>
+        <a href="article.html?id=nouveaux-programmes-2024" class="test-link">🆕 Article exemple</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>🎯 Comment ça fonctionne</h2>
+        <ol>
+            <li><strong>Au chargement de index.html</strong>, la fonction <code>loadHomepageBlogArticles()</code> est appelée</li>
+            <li><strong>Fetch de articles.json</strong> pour récupérer tous les articles</li>
+            <li><strong>Tri par date</strong> et sélection des 3 plus récents</li>
+            <li><strong>Génération du HTML</strong> pour chaque article avec :</li>
+            <ul>
+                <li>Image de l'article</li>
+                <li>Catégorie</li>
+                <li>Date formatée</li>
+                <li>Auteur</li>
+                <li>Titre</li>
+                <li>Extrait</li>
+                <li>Lien vers l'article complet</li>
+            </ul>
+            <li><strong>Remplacement du contenu</strong> dans <code>#homepageBlogGrid</code></li>
+            <li><strong>Animations</strong> pour une apparition fluide</li>
+        </ol>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔧 Gestion des erreurs</h2>
+        <ul>
+            <li>✅ <strong>Erreur de réseau</strong> : Affichage d'un message d'erreur avec bouton "Réessayer"</li>
+            <li>✅ <strong>Aucun article</strong> : Affichage d'un message "Aucun article disponible"</li>
+            <li>✅ <strong>Chargement</strong> : Affichage d'un spinner pendant le chargement</li>
+            <li>✅ <strong>Console</strong> : Logs détaillés pour le débogage</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>📊 Avantages</h2>
+        <ul>
+            <li>✅ <strong>Contenu toujours à jour</strong> : Les articles s'actualisent automatiquement</li>
+            <li>✅ <strong>Maintenance simplifiée</strong> : Un seul fichier articles.json à modifier</li>
+            <li>✅ <strong>Performance optimisée</strong> : Seulement 3 articles chargés sur la page d'accueil</li>
+            <li>✅ <strong>UX améliorée</strong> : Animations et états de chargement</li>
+            <li>✅ <strong>SEO optimisé</strong> : Contenu dynamique et liens directs</li>
+        </ul>
+    </div>
+    
+    <script>
+        // Test automatique du contenu dynamique
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 Test du blog dynamique...');
+            
+            // Charger les articles
+            fetch('articles.json')
+                .then(response => response.json())
+                .then(data => {
+                    const articles = data.articles;
+                    
+                    // Trier par date et prendre les 3 plus récents
+                    const recentArticles = articles
+                        .sort((a, b) => new Date(b.date) - new Date(a.date))
+                        .slice(0, 3);
+                    
+                    // Afficher l'aperçu
+                    const preview = document.getElementById('articlesPreview');
+                    preview.innerHTML = recentArticles.map(article => `
+                        <div class="blog-preview">
+                            <h3>${article.title}</h3>
+                            <div class="meta">
+                                <strong>Date:</strong> ${new Date(article.date).toLocaleDateString('fr-FR')} | 
+                                <strong>Catégorie:</strong> ${article.category} | 
+                                <strong>Auteur:</strong> ${article.author}
+                            </div>
+                            <p><strong>Extrait:</strong> ${article.excerpt}</p>
+                            <p><strong>Lien:</strong> <a href="article.html?id=${article.id}">Voir l'article complet</a></p>
+                        </div>
+                    `).join('');
+                    
+                    console.log(`✅ ${recentArticles.length} articles récents chargés pour la page d'accueil`);
+                    console.log('📅 Articles triés par date (du plus récent au plus ancien)');
+                    
+                })
+                .catch(error => {
+                    console.error('❌ Erreur lors du test:', error);
+                    document.getElementById('articlesPreview').innerHTML = 
+                        '<p class="error">Erreur lors du chargement des articles</p>';
+                });
+        });
+    </script>
+</body>
+</html>

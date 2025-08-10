@@ -3,11 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAJIP-FRANCE - Association d'Accompagnement Juridique et d'Insertion Professionnelle</title>
-    <meta name="description" content="AAJIP-FRANCE accompagne les personnes en difficulté avec un soutien juridique, administratif et professionnel pour favoriser l'autonomie et l'insertion sociale.">
+    <title>AAJIP-FRANCE | Association d'Accompagnement Juridique et d'Insertion Professionnelle</title>
+    <meta name="description" content="AAJIP-FRANCE accompagne les personnes en difficulté avec un soutien juridique, administratif et professionnel. Association loi 1901 pour l'insertion sociale et professionnelle en France.">
+    <meta name="keywords" content="AAJIP-FRANCE, association, accompagnement juridique, insertion professionnelle, aide sociale, France, loi 1901, bénévolat, solidarité">
+    <meta name="author" content="AAJIP-FRANCE">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="geo.region" content="FR">
+    <meta name="geo.placename" content="France">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aajipfrance.fr/">
+    <meta property="og:title" content="AAJIP-FRANCE | Association d'Accompagnement Juridique et d'Insertion Professionnelle">
+    <meta property="og:description" content="AAJIP-FRANCE accompagne les personnes en difficulté avec un soutien juridique, administratif et professionnel pour favoriser l'autonomie et l'insertion sociale.">
+    <meta property="og:image" content="https://aajipfrance.fr/logo.jpg">
+    <meta property="og:site_name" content="AAJIP-FRANCE">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aajipfrance.fr/">
+    <meta property="twitter:title" content="AAJIP-FRANCE | Association d'Accompagnement Juridique et d'Insertion Professionnelle">
+    <meta property="twitter:description" content="AAJIP-FRANCE accompagne les personnes en difficulté avec un soutien juridique, administratif et professionnel.">
+    <meta property="twitter:image" content="https://aajipfrance.fr/logo.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://aajipfrance.fr/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NonProfit",
+        "name": "AAJIP-FRANCE",
+        "alternateName": "Association d'Accompagnement Juridique et d'Insertion Professionnelle en France",
+        "description": "Association d'accompagnement juridique et d'insertion professionnelle pour les personnes en difficulté",
+        "url": "https://aajipfrance.fr",
+        "logo": "https://aajipfrance.fr/logo.jpg",
+        "image": "https://aajipfrance.fr/logo.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+33624671692",
+            "contactType": "customer service",
+            "email": "aajipfrance@gmail.com"
+        },
+        "sameAs": [
+            "https://www.facebook.com/share/15rZnxFqbb/?mibextid=wwXIfr",
+            "https://www.instagram.com/aajipfrance",
+            "https://www.linkedin.com/in/aajip-france-920aa1378/",
+            "https://x.com/aajipfranc80809",
+            "https://www.youtube.com/@aajipfrance",
+            "https://tiktok.com/@aajipfrance"
+        ],
+        "foundingDate": "2024",
+        "legalName": "Association d'Accompagnement Juridique et d'Insertion Professionnelle en France",
+        "taxID": "Association loi 1901",
+        "areaServed": "France",
+        "serviceType": [
+            "Accompagnement juridique",
+            "Insertion professionnelle",
+            "Accompagnement social",
+            "Formation et éducation"
+        ]
+    }
+    </script>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="config.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -31,6 +106,12 @@
                     <a href="#actions" class="nav-link">Nos actions</a>
                 </li>
                 <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#donation" class="nav-link">Faire un don</a>
+                </li>
+                <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
@@ -47,7 +128,7 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">AAJIP-FRANCE</h1>
-                <h2 class="hero-subtitle">Association d'Accompagnement Juridique et d'Insertion Professionnelle</h2>
+                <h2 class="hero-subtitle">Association d'Accompagnement Juridique et d'Insertion Professionnelle en France</h2>
                 <p class="hero-description">
                     Nous accompagnons les personnes en difficulté vers l'autonomie et l'insertion sociale et professionnelle, 
                     sans distinction d'origine, de nationalité ou de situation.
@@ -66,14 +147,15 @@
     <!-- Section À propos -->
     <section id="a-propos" class="about">
         <div class="container">
-            <h2 class="section-title">À propos de l'AAJIP-FRANCE</h2>
+            <h2 class="section-title">À propos de l'AAJIP-FRANCE - Association d'Accompagnement Juridique et d'Insertion Professionnelle</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p class="about-paragraph">
                         L'<strong>Association d'Accompagnement Juridique et d'Insertion Professionnelle en France (AAJIP-FRANCE)</strong> 
                         est une organisation à but non lucratif, régie par la loi de 1901, dont la vocation est d'apporter un accompagnement 
                         social, juridique, administratif, pédagogique et professionnel à toute personne, sans distinction d'origine, 
-                        de nationalité ou de situation.
+                        de nationalité ou de situation. Notre association AAJIP-FRANCE intervient sur tout le territoire français pour 
+                        soutenir l'insertion sociale et professionnelle.
                     </p>
                     <p class="about-paragraph">
                         Créée par un collectif de citoyens engagés, l'AAJIP-FRANCE s'inscrit dans une dynamique de solidarité, 
@@ -106,35 +188,37 @@
     <!-- Section Missions -->
     <section id="missions" class="missions">
         <div class="container">
-            <h2 class="section-title">Nos missions</h2>
-            <div class="missions-grid">
-                <div class="mission-card">
-                    <div class="mission-icon">
+            <h2 class="section-title">Nos missions - AAJIP-FRANCE</h2>
+            <div class="missions-content">
+                <div class="missions-list">
+                    <div class="mission-item">
                         <i class="fas fa-gavel"></i>
+                        <div class="mission-text">
+                            <h3>Accompagnement juridique</h3>
+                            <p>Conseils et soutien dans les démarches juridiques et administratives. AAJIP-FRANCE vous accompagne dans vos procédures légales.</p>
+                        </div>
                     </div>
-                    <h3>Accompagnement juridique</h3>
-                    <p>Conseils et soutien dans les démarches juridiques et administratives</p>
-                </div>
-                <div class="mission-card">
-                    <div class="mission-icon">
+                    <div class="mission-item">
                         <i class="fas fa-briefcase"></i>
+                        <div class="mission-text">
+                            <h3>Insertion professionnelle</h3>
+                            <p>Accompagnement vers l'emploi et la formation professionnelle. AAJIP-FRANCE facilite votre retour à l'emploi.</p>
+                        </div>
                     </div>
-                    <h3>Insertion professionnelle</h3>
-                    <p>Accompagnement vers l'emploi et la formation professionnelle</p>
-                </div>
-                <div class="mission-card">
-                    <div class="mission-icon">
+                    <div class="mission-item">
                         <i class="fas fa-hands-helping"></i>
+                        <div class="mission-text">
+                            <h3>Accompagnement social</h3>
+                            <p>Soutien dans les difficultés sociales et quotidiennes</p>
+                        </div>
                     </div>
-                    <h3>Accompagnement social</h3>
-                    <p>Soutien dans les difficultés sociales et quotidiennes</p>
-                </div>
-                <div class="mission-card">
-                    <div class="mission-icon">
+                    <div class="mission-item">
                         <i class="fas fa-graduation-cap"></i>
+                        <div class="mission-text">
+                            <h3>Formation et éducation</h3>
+                            <p>Ateliers et formations pour l'autonomie et la citoyenneté</p>
+                        </div>
                     </div>
-                    <h3>Formation et éducation</h3>
-                    <p>Ateliers et formations pour l'autonomie et la citoyenneté</p>
                 </div>
             </div>
         </div>
@@ -215,6 +299,84 @@
         </div>
     </section>
 
+    <!-- Section Donation -->
+    <section id="donation" class="donation">
+        <div class="container">
+            <h2 class="section-title">Soutenir l'AAJIP-FRANCE</h2>
+            <div class="donation-content">
+                <div class="donation-info">
+                    <h3>Votre soutien fait la différence</h3>
+                    <p>
+                        Chaque don, quel que soit son montant, nous permet de continuer notre mission d'accompagnement 
+                        et d'insertion. Votre générosité contribue directement à l'aide apportée aux personnes en difficulté.
+                    </p>
+                    <div class="donation-impact">
+                        <div class="impact-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Accompagnement</h4>
+                                <p>Soutien juridique et social personnalisé</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Formation</h4>
+                                <p>Ateliers et formations pour l'autonomie</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <div>
+                                <h4>Insertion</h4>
+                                <p>Aide à l'insertion professionnelle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="donation-form">
+                    <h3>Faire un don</h3>
+                    <div class="donation-options">
+                        <div class="donation-option">
+                            <h4>Don en ligne sécurisé</h4>
+                            <p>Faites un don en toute sécurité via notre cagnotte Leetchi</p>
+                            <a href="https://www.leetchi.com/fr/c/aajip-france-1322704?utm_source=copylink&utm_medium=social_sharing" target="_blank" class="btn btn-primary donation-btn">
+                                <i class="fas fa-heart"></i>
+                                Faire un don via Leetchi
+                            </a>
+                        </div>
+                        <div class="donation-option">
+                            <h4>Autres moyens de soutien</h4>
+                            <p>Vous pouvez également nous soutenir par virement bancaire ou chèque</p>
+                            <div class="contact-info-donation">
+                                <p><strong>Email :</strong> aajipfrance@gmail.com</p>
+                                <p><strong>Téléphone :</strong> +33 6 24 67 16 92</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Blog -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Notre blog</h2>
+            <p class="section-subtitle">Actualités, témoignages et informations sur nos actions</p>
+            <div class="blog-grid" id="homepageBlogGrid">
+                <!-- Les articles seront chargés dynamiquement ici -->
+                <div class="blog-loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Chargement des articles...</p>
+                </div>
+            </div>
+            <div class="blog-cta">
+                <a href="blog.html" class="btn btn-secondary">Voir tous les articles</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Section Contact -->
     <section id="contact" class="contact">
         <div class="container">
@@ -228,6 +390,20 @@
                         de toutes et tous.
                     </p>
                     <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p><a href="tel:+33624671692" style="color: #c7d2fe; text-decoration: none;">+33 6 24 67 16 92</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:aajipfrance@gmail.com" style="color: #c7d2fe; text-decoration: none;">aajipfrance@gmail.com</a></p>
+                            </div>
+                        </div>
                         <div class="contact-item">
                             <i class="fas fa-users"></i>
                             <div>
@@ -317,9 +493,12 @@
                     <p>Association régie par la loi de 1901</p>
                     <p>Organisation à but non lucratif</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/share/15rZnxFqbb/?mibextid=wwXIfr" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/aajipfrance?utm_source=qr&igsh=MW5kcjNrZjRwczc4NQ==" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/aajip-france-920aa1378/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://tiktok.com/@aajipfrance" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                                                 <a href="https://x.com/aajipfranc80809?t=KrN-_pfWvxEJC4HGkau52w&s=08" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/@aajipfrance" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -330,5 +509,66 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <!-- Données structurées pour les services -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Accompagnement juridique AAJIP-FRANCE",
+        "description": "Conseils et soutien dans les démarches juridiques et administratives",
+        "provider": {
+            "@type": "NonProfit",
+            "name": "AAJIP-FRANCE"
+        },
+        "areaServed": "France",
+        "serviceType": "Accompagnement juridique"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Insertion professionnelle AAJIP-FRANCE",
+        "description": "Accompagnement vers l'emploi et la formation professionnelle",
+        "provider": {
+            "@type": "NonProfit",
+            "name": "AAJIP-FRANCE"
+        },
+        "areaServed": "France",
+        "serviceType": "Insertion professionnelle"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Accompagnement social AAJIP-FRANCE",
+        "description": "Soutien dans les difficultés sociales et quotidiennes",
+        "provider": {
+            "@type": "NonProfit",
+            "name": "AAJIP-FRANCE"
+        },
+        "areaServed": "France",
+        "serviceType": "Accompagnement social"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Formation et éducation AAJIP-FRANCE",
+        "description": "Ateliers et formations pour l'autonomie et la citoyenneté",
+        "provider": {
+            "@type": "NonProfit",
+            "name": "AAJIP-FRANCE"
+        },
+        "areaServed": "France",
+        "serviceType": "Formation et éducation"
+    }
+    </script>
 </body>
 </html> 

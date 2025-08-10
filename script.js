@@ -13,11 +13,12 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
-// Navigation smooth scroll
+// Navigation smooth scroll - seulement pour les liens internes
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
@@ -66,6 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Initialisation EmailJS
+emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+
 // Gestion du formulaire de contact
 const contactForm = document.querySelector('.form');
 if (contactForm) {
@@ -82,9 +86,84 @@ if (contactForm) {
             return;
         }
         
-        // Simulation d'envoi (remplacer par votre logique d'envoi)
-        showNotification('Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.', 'success');
+        // Préparation des paramètres pour EmailJS
+        const templateParams = {
+            to_email: EMAILJS_CONFIG.TO_EMAIL,
+            from_name: data.name,
+            from_email: data.email,
+            from_phone: data.phone || 'Non renseigné',
+            subject: data.subject,
+            message: data.message
+        };
+        
+        // Envoi via EmailJS
+        emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, templateParams)
+            .then(function(response) {
+                showNotification('Message envoyé avec succès à aajipfrance@gmail.com !', 'success');
+                contactForm.reset();
+            }, function(error) {
+                showNotification('Erreur lors de l\'envoi du message. Veuillez réessayer.', 'error');
+            });
+    });
+}
+
+// Gestion du formulaire de donation
+const donationForm = document.querySelector('.donation-form-content');
+if (donationForm) {
+    // Gestion des boutons de montant
+    const amountButtons = document.querySelectorAll('.amount-btn');
+    const customAmountDiv = document.querySelector('.custom-amount');
+    const customAmountInput = document.getElementById('customAmount');
+    
+    amountButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Retirer la classe active de tous les boutons
+            amountButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Ajouter la classe active au bouton cliqué
+            this.classList.add('active');
+            
+            // Gérer l'affichage du champ montant personnalisé
+            if (this.dataset.amount === 'custom') {
+                customAmountDiv.style.display = 'block';
+                customAmountInput.focus();
+            } else {
+                customAmountDiv.style.display = 'none';
+                customAmountInput.value = '';
+            }
+        });
+    });
+    
+    // Gestion de la soumission du formulaire de donation
+    donationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Récupération des données du formulaire
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Validation basique
+        if (!data.donorName || !data.donorEmail) {
+            showNotification('Veuillez remplir tous les champs obligatoires.', 'error');
+            return;
+        }
+        
+        // Vérifier qu'un montant est sélectionné
+        const activeButton = document.querySelector('.amount-btn.active');
+        const customAmount = customAmountInput.value;
+        
+        if (!activeButton && !customAmount) {
+            showNotification('Veuillez sélectionner un montant.', 'error');
+            return;
+        }
+        
+        // Simulation d'envoi (remplacer par votre logique de paiement)
+        showNotification('Merci pour votre don ! Vous recevrez un email de confirmation.', 'success');
         this.reset();
+        
+        // Réinitialiser les boutons
+        amountButtons.forEach(btn => btn.classList.remove('active'));
+        customAmountDiv.style.display = 'none';
     });
 }
 
@@ -236,11 +315,102 @@ function enhanceAccessibility() {
     });
 }
 
+// Chargement dynamique des articles du blog sur la page d'accueil
+async function loadHomepageBlogArticles() {
+    const blogGrid = document.getElementById('homepageBlogGrid');
+    if (!blogGrid) return;
+    
+    try {
+        const response = await fetch('articles.json');
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        const articles = data.articles || [];
+        
+        // Prendre les 3 articles les plus récents
+        const recentArticles = articles
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 3);
+        
+        if (recentArticles.length === 0) {
+            blogGrid.innerHTML = `
+                <div class="blog-empty">
+                    <i class="fas fa-newspaper"></i>
+                    <p>Nouvel article disponible bientôt</p>
+                </div>
+            `;
+            return;
+        }
+        
+        // Générer le HTML des articles
+        const articlesHTML = recentArticles.map(article => {
+            const formattedDate = formatDate(article.date);
+            return `
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="${article.image}" alt="${article.title}">
+                        <div class="blog-category">${article.category}</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="fas fa-calendar"></i> ${formattedDate}</span>
+                            <span class="blog-author"><i class="fas fa-user"></i> ${article.author}</span>
+                        </div>
+                        <h3>${article.title}</h3>
+                        <p>${article.excerpt}</p>
+                        <a href="article.html?id=${article.id}" class="blog-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            `;
+        }).join('');
+        
+        blogGrid.innerHTML = articlesHTML;
+        
+        // Ajouter les animations pour les nouvelles cartes
+        const newCards = blogGrid.querySelectorAll('.blog-card');
+        newCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 200);
+        });
+        
+    } catch (error) {
+        console.error('Erreur lors du chargement des articles:', error);
+        
+        blogGrid.innerHTML = `
+            <div class="blog-empty">
+                <i class="fas fa-newspaper"></i>
+                <p>Nouvel article disponible bientôt</p>
+            </div>
+        `;
+    }
+}
+
+// Formatage de la date
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('fr-FR', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+}
+
 // Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     // Initialiser les fonctionnalités
     lazyLoadImages();
     enhanceAccessibility();
+    
+    // Charger les articles du blog sur la page d'accueil
+    loadHomepageBlogArticles();
     
     // Ajouter des effets de hover améliorés
     const cards = document.querySelectorAll('.mission-card, .value-card, .principle-card');
@@ -324,4 +494,6 @@ function initDarkMode() {
 }
 
 // Initialiser le mode sombre si demandé
-// initDarkMode(); 
+// initDarkMode();
+
+ 

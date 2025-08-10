@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - AAJIP-FRANCE | Actualités et témoignages</title>
+    <meta name="description" content="Découvrez les actualités, témoignages et informations sur les actions de l'AAJIP-FRANCE. Blog de l'association d'accompagnement juridique et d'insertion professionnelle.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aajipfrance.fr/blog.html">
+    <meta property="og:title" content="Blog - AAJIP-FRANCE | Actualités et témoignages">
+    <meta property="og:description" content="Découvrez les actualités, témoignages et informations sur les actions de l'AAJIP-FRANCE.">
+    <meta property="og:image" content="https://aajipfrance.fr/logo.jpg">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="blog-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.jpg" alt="Logo AAJIP-FRANCE" class="logo">
+                <span class="logo-text">AAJIP-FRANCE</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#a-propos" class="nav-link">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#missions" class="nav-link">Nos missions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#actions" class="nav-link">Nos actions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link active">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#donation" class="nav-link">Faire un don</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Blog -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>Notre blog</h1>
+            <p>Actualités, témoignages et informations sur nos actions</p>
+        </div>
+    </section>
+
+    <!-- Section Blog -->
+    <section class="blog-main">
+        <div class="container">
+            <div class="blog-layout">
+                <!-- Sidebar -->
+                <aside class="blog-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Catégories</h3>
+                        <ul class="category-list" id="categoryList">
+                            <!-- Catégories chargées dynamiquement -->
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Articles récents</h3>
+                        <div class="recent-posts" id="recentPosts">
+                            <!-- Articles récents chargés dynamiquement -->
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Rechercher</h3>
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Rechercher un article...">
+                            <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Contenu principal -->
+                <main class="blog-content">
+                    <!-- Filtres -->
+                    <div class="blog-filters">
+                        <div class="filter-group">
+                            <label for="categoryFilter">Catégorie:</label>
+                            <select id="categoryFilter">
+                                <option value="">Toutes les catégories</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sortFilter">Trier par:</label>
+                            <select id="sortFilter">
+                                <option value="date-desc">Plus récent</option>
+                                <option value="date-asc">Plus ancien</option>
+                                <option value="title-asc">Titre A-Z</option>
+                                <option value="title-desc">Titre Z-A</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Grille d'articles -->
+                    <div class="blog-grid" id="blogGrid">
+                        <!-- Articles chargés dynamiquement -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination générée dynamiquement -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo.jpg" alt="Logo AAJIP-FRANCE" class="footer-logo-img">
+                        <span class="footer-logo-text">AAJIP-FRANCE</span>
+                    </div>
+                    <p>Association d'Accompagnement Juridique et d'Insertion Professionnelle en France</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Nos missions</h4>
+                    <ul>
+                        <li><a href="index.html#missions">Accompagnement juridique</a></li>
+                        <li><a href="index.html#missions">Insertion professionnelle</a></li>
+                        <li><a href="index.html#missions">Accompagnement social</a></li>
+                        <li><a href="index.html#missions">Formation et éducation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Nos valeurs</h4>
+                    <ul>
+                        <li>Solidarité</li>
+                        <li>Inclusion</li>
+                        <li>Défense des droits</li>
+                        <li>Transparence</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Association régie par la loi de 1901</p>
+                    <p>Organisation à but non lucratif</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/15rZnxFqbb/?mibextid=wwXIfr" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/aajipfrance?utm_source=qr&igsh=MW5kcjNrZjRwczc4NQ==" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/aajip-france-920aa1378/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://tiktok.com/@aajipfrance" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AAJIP-FRANCE. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>

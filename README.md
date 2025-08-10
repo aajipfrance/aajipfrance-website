@@ -47,8 +47,37 @@ aajip-france-website/
 ├── index.html          # Page principale du site
 ├── styles.css          # Styles CSS du site
 ├── script.js           # JavaScript pour l'interactivité
+├── config.js           # Configuration EmailJS (données sensibles)
+├── config.example.js   # Exemple de configuration
+├── .gitignore          # Fichiers à ignorer par Git
 ├── logo.jpg            # Logo de l'association
 └── README.md           # Documentation du projet
+```
+
+## 🔐 Configuration EmailJS
+
+### Sécurité des données
+
+Les données sensibles EmailJS sont stockées dans un fichier de configuration séparé (`config.js`) qui n'est pas inclus dans le contrôle de version.
+
+### Configuration initiale
+
+1. Copiez le fichier `config.example.js` vers `config.js`
+2. Remplacez les valeurs par vos vraies données EmailJS :
+   - `PUBLIC_KEY` : Votre clé publique EmailJS
+   - `SERVICE_ID` : Votre ID de service EmailJS
+   - `TEMPLATE_ID` : Votre ID de template EmailJS
+   - `TO_EMAIL` : L'adresse email de destination
+
+### Exemple de configuration
+
+```javascript
+const EMAILJS_CONFIG = {
+  PUBLIC_KEY: "VOTRE_API_PUBLIC_KEY_ICI",
+  SERVICE_ID: "VOTRE_SERVICE_ID_ICI",
+  TEMPLATE_ID: "VOTRE_TEMPLATE_ID_ICI",
+  TO_EMAIL: "votre-email@gmail.com",
+};
 ```
 
 ## 🛠️ Technologies utilisées

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration Blog - AAJIP-FRANCE</title>
+    <meta name="description" content="Interface d'administration du blog AAJIP-FRANCE">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.jpg" alt="Logo AAJIP-FRANCE" class="logo">
+                <span class="logo-text">AAJIP-FRANCE</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Retour au site</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Voir le blog</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Admin -->
+    <header class="admin-header">
+        <div class="container">
+            <h1>Administration du Blog</h1>
+            <p>Gérez les articles de votre blog</p>
+        </div>
+    </header>
+
+    <!-- Main Admin -->
+    <main class="admin-main">
+        <div class="container">
+            <!-- Onglets -->
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="articles">Articles</button>
+                <button class="tab-btn" data-tab="add">Ajouter un article</button>
+                <button class="tab-btn" data-tab="categories">Catégories</button>
+            </div>
+
+            <!-- Onglet Articles -->
+            <div class="tab-content active" id="articles-tab">
+                <div class="tab-header">
+                    <h2>Gestion des articles</h2>
+                    <button class="btn btn-primary" onclick="showAddArticleForm()">
+                        <i class="fas fa-plus"></i> Nouvel article
+                    </button>
+                </div>
+                
+                <div class="articles-list" id="articlesList">
+                    <!-- Liste des articles chargée dynamiquement -->
+                </div>
+            </div>
+
+            <!-- Onglet Ajouter un article -->
+            <div class="tab-content" id="add-tab">
+                <div class="tab-header">
+                    <h2>Ajouter un nouvel article</h2>
+                </div>
+                
+                <form class="article-form" id="articleForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="articleTitle">Titre de l'article *</label>
+                            <input type="text" id="articleTitle" name="title" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="articleExcerpt">Extrait *</label>
+                            <textarea id="articleExcerpt" name="excerpt" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="articleContent">Contenu *</label>
+                            <textarea id="articleContent" name="content" rows="15" required></textarea>
+                            <small>Vous pouvez utiliser du HTML pour formater le contenu</small>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="articleAuthor">Auteur *</label>
+                            <input type="text" id="articleAuthor" name="author" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleDate">Date de publication *</label>
+                            <input type="date" id="articleDate" name="date" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="articleCategory">Catégorie *</label>
+                            <select id="articleCategory" name="category" required>
+                                <option value="">Sélectionner une catégorie</option>
+                                <option value="Accompagnement">Accompagnement</option>
+                                <option value="Insertion">Insertion</option>
+                                <option value="Formation">Formation</option>
+                                <option value="Partenariats">Partenariats</option>
+                                <option value="Bénévolat">Bénévolat</option>
+                                <option value="Impact">Impact</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleImage">Image URL *</label>
+                            <input type="url" id="articleImage" name="image" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="articleTags">Tags (séparés par des virgules)</label>
+                            <input type="text" id="articleTags" name="tags" placeholder="ex: juridique, accompagnement, droits">
+                        </div>
+                        <div class="form-group">
+                            <label for="articleReadTime">Temps de lecture</label>
+                            <input type="text" id="articleReadTime" name="readTime" placeholder="ex: 5 min">
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Publier l'article
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="resetForm()">
+                            <i class="fas fa-undo"></i> Réinitialiser
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Onglet Catégories -->
+            <div class="tab-content" id="categories-tab">
+                <div class="tab-header">
+                    <h2>Gestion des catégories</h2>
+                    <button class="btn btn-primary" onclick="showAddCategoryForm()">
+                        <i class="fas fa-plus"></i> Nouvelle catégorie
+                    </button>
+                </div>
+                
+                <div class="categories-list" id="categoriesList">
+                    <!-- Liste des catégories chargée dynamiquement -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de confirmation -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <h3>Confirmation</h3>
+            <p id="confirmMessage">Êtes-vous sûr de vouloir effectuer cette action ?</p>
+            <div class="modal-actions">
+                <button class="btn btn-danger" id="confirmBtn">Confirmer</button>
+                <button class="btn btn-secondary" onclick="closeModal()">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal d'ajout de catégorie -->
+    <div class="modal" id="categoryModal">
+        <div class="modal-content">
+            <h3>Ajouter une catégorie</h3>
+            <form id="categoryForm">
+                <div class="form-group">
+                    <label for="categoryName">Nom de la catégorie *</label>
+                    <input type="text" id="categoryName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoryDescription">Description</label>
+                    <textarea id="categoryDescription" name="description" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeCategoryModal()">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

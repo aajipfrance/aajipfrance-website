@@ -1,0 +1,26 @@
+# Configuration EmailJS - Données sensibles
+config.js
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (si applicable)
+node_modules/
+
+# Fichiers de sauvegarde
+*.bak
+*.backup

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Navigation - AAJIP-FRANCE</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .test-link {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .test-link:hover {
+            background: #5a67d8;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test de Navigation - AAJIP-FRANCE</h1>
+    
+    <div class="test-section">
+        <h2>✅ Problème résolu !</h2>
+        <p class="success">Les liens vers le blog ont été corrigés dans index.html :</p>
+        <ul>
+            <li>✅ Navigation principale : "Blog" → blog.html</li>
+            <li>✅ Bouton "Voir tous les articles" → blog.html</li>
+            <li>✅ Liens "Lire la suite" → blog.html</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔗 Test des liens</h2>
+        <p>Cliquez sur les liens ci-dessous pour tester :</p>
+        
+        <a href="index.html" class="test-link">📄 Page d'accueil</a>
+        <a href="blog.html" class="test-link">📝 Page du blog</a>
+        <a href="article.html?id=accompagnement-juridique-importance" class="test-link">📖 Article exemple</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>🎯 Comment tester</h2>
+        <ol>
+            <li>Ouvrez <strong>index.html</strong> dans votre navigateur</li>
+            <li>Cliquez sur "Blog" dans la navigation</li>
+            <li>Ou cliquez sur "Voir tous les articles" dans la section blog</li>
+            <li>Ou cliquez sur "Lire la suite" sous n'importe quel article</li>
+            <li>Vous devriez être redirigé vers <strong>blog.html</strong></li>
+        </ol>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔧 Corrections apportées</h2>
+        <ul>
+            <li><strong>Navigation :</strong> <code>&lt;a href="#blog"&gt;</code> → <code>&lt;a href="blog.html"&gt;</code></li>
+            <li><strong>Liens "Lire la suite" :</strong> <code>&lt;a href="#"&gt;</code> → <code>&lt;a href="blog.html"&gt;</code></li>
+            <li><strong>Bouton CTA :</strong> Déjà correct avec <code>&lt;a href="blog.html"&gt;</code></li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>📋 Checklist de vérification</h2>
+        <ul>
+            <li>✅ Tous les liens pointent vers blog.html</li>
+            <li>✅ Le fichier blog.html existe</li>
+            <li>✅ Le fichier articles.json existe</li>
+            <li>✅ Le fichier config.js existe</li>
+            <li>✅ Les styles blog-styles.css sont chargés</li>
+        </ul>
+    </div>
+    
+    <script>
+        // Test automatique des liens
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = [
+                { name: 'index.html', url: 'index.html' },
+                { name: 'blog.html', url: 'blog.html' },
+                { name: 'articles.json', url: 'articles.json' }
+            ];
+            
+            console.log('🔍 Test automatique des liens...');
+            
+            links.forEach(link => {
+                fetch(link.url)
+                    .then(response => {
+                        if (response.ok) {
+                            console.log(`✅ ${link.name} - Accessible`);
+                        } else {
+                            console.log(`❌ ${link.name} - Erreur ${response.status}`);
+                        }
+                    })
+                    .catch(error => {
+                        console.log(`❌ ${link.name} - Erreur: ${error.message}`);
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
