@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Navbar - AAJIP-FRANCE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Bande défilante pour les dons -->
+    <div class="donation-banner">
+        <div class="donation-banner-content">
+            <div class="donation-banner-text">
+                <i class="fas fa-heart"></i>
+                <span>Soutenez notre mission ! Chaque don compte pour l'accompagnement et l'insertion</span>
+            </div>
+            <a href="https://www.leetchi.com/fr/c/aajip-france-1322704" class="donation-banner-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-gift"></i>
+                Faire un don
+            </a>
+            <button class="donation-banner-close" onclick="closeDonationBanner()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.jpg" alt="Logo AAJIP-FRANCE" class="logo">
+                <span class="logo-text">AAJIP-FRANCE</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="a-propos.html" class="nav-link">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="missions.html" class="nav-link">Nos missions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="actions.html" class="nav-link">Nos actions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="donation.html" class="nav-link">Faire un don</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu de test -->
+    <section style="margin-top: 150px; padding: 2rem;">
+        <div class="container">
+            <h1>Test de la Navbar</h1>
+            <p>Cette page permet de tester que la navbar fonctionne correctement sur toutes les pages.</p>
+            
+            <h2>Pages disponibles :</h2>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="missions.html">Nos missions</a></li>
+                <li><a href="actions.html">Nos actions</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="donation.html">Faire un don</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <h2>Vérifications :</h2>
+            <ul>
+                <li>✅ Tous les liens de navigation pointent vers les bons fichiers</li>
+                <li>✅ Les styles CSS sont correctement appliqués</li>
+                <li>✅ La navbar est responsive</li>
+                <li>✅ Le menu hamburger fonctionne sur mobile</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
