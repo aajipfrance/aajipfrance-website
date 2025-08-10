@@ -48,10 +48,11 @@ ErrorDocument 404 /index.html
     Deny from all
 </Files>
 
-<Files "articles.json">
-    Order allow,deny
-    Deny from all
-</Files>
+# Note: articles.json doit être accessible pour le blog
+# <Files "articles.json">
+#     Order allow,deny
+#     Deny from all
+# </Files>
 
 # Headers de sécurité
 <IfModule mod_headers.c>

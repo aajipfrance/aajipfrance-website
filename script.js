@@ -442,7 +442,7 @@ async function loadHomepageBlogArticles() {
                         </div>
                         <h3>${article.title}</h3>
                         <p>${article.excerpt}</p>
-                        <a href="article.html?id=${article.id}" class="blog-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                        <a href="/article?id=${article.id}" class="blog-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             `;

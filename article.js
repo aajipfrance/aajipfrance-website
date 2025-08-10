@@ -218,7 +218,7 @@ function displayRelatedArticles(currentArticle) {
                         <i class="${article.icon}"></i>
                     </div>
                     <div class="related-content">
-                        <h4><a href="article.html?id=${article.id}">${article.title}</a></h4>
+                        <h4><a href="/article?id=${article.id}">${article.title}</a></h4>
                         <p>${article.excerpt}</p>
                         <div class="related-meta">
                             <span class="date">${formatDate(article.date)}</span>
