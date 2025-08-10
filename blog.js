@@ -4,21 +4,40 @@ const BLOG_CONFIG = {
     defaultSort: 'date-desc'
 };
 
-// Fonction pour fermer la bande défilante des dons
+// Fonction pour fermer la bande défilante des dons (temporairement)
 function closeDonationBanner() {
     const banner = document.querySelector('.donation-banner');
     if (banner) {
         banner.classList.add('hidden');
-        // Optionnel : sauvegarder dans localStorage pour ne pas la remontrer
-        localStorage.setItem('donationBannerClosed', 'true');
+        // Sauvegarder dans localStorage pour 24h seulement
+        const expiryTime = Date.now() + (24 * 60 * 60 * 1000); // 24 heures
+        localStorage.setItem('donationBannerClosed', expiryTime.toString());
+        
+        // Réafficher après 24h
+        setTimeout(() => {
+            banner.classList.remove('hidden');
+            localStorage.removeItem('donationBannerClosed');
+        }, 24 * 60 * 60 * 1000);
     }
 }
 
 // Vérifier si la bande défilante doit être affichée
 document.addEventListener('DOMContentLoaded', () => {
     const banner = document.querySelector('.donation-banner');
-    if (banner && localStorage.getItem('donationBannerClosed') === 'true') {
-        banner.style.display = 'none';
+    if (banner) {
+        const closedTime = localStorage.getItem('donationBannerClosed');
+        if (closedTime) {
+            const expiryTime = parseInt(closedTime);
+            if (Date.now() < expiryTime) {
+                // La bannière est encore fermée
+                banner.style.display = 'none';
+            } else {
+                // Le temps est écoulé, réafficher la bannière
+                banner.style.display = 'block';
+                banner.classList.remove('hidden');
+                localStorage.removeItem('donationBannerClosed');
+            }
+        }
     }
 });
 
