@@ -185,6 +185,72 @@
       "icon": "fas fa-gift",
       "tags": ["collecte", "solidarité", "accueil", "kits", "médiatisation"],
       "readTime": "10 min"
+    },
+    {
+      "id": "conseils-accompagnement-juridique-admin",
+      "title": "Conseils et accompagnement dans les démarches juridiques et administratives",
+      "excerpt": "AAJIP-FRANCE assure une mission d'information, d'orientation et de soutien dans le cadre des démarches juridiques et administratives de ses usagers.",
+      "content": "<p>AAJIP-FRANCE assure une mission d'information, d'orientation et de soutien dans le cadre des démarches juridiques et administratives de ses usagers. Notre association met à disposition son expertise afin de faciliter l'accès au droit et de garantir le respect des procédures légales.</p><h3>Nos domaines d'intervention</h3><p>Nous intervenons notamment dans les domaines suivants :</p><h4>Information et orientation juridiques</h4><p>Notre équipe propose une clarification des droits et obligations, une orientation vers les dispositifs compétents et, le cas échéant, vers des professionnels qualifiés du droit. Nous aidons nos usagers à comprendre leurs droits fondamentaux et les procédures qui s'appliquent à leur situation.</p><h4>Assistance administrative</h4><p>Nous apportons un appui à la constitution de dossiers, accompagnons dans la rédaction et le dépôt de demandes officielles, et assurons un suivi des procédures auprès des administrations concernées. Cette assistance couvre tous les aspects administratifs : régularisation de séjour, obtention de titres, accès aux droits sociaux.</p><h4>Médiation et interface institutionnelle</h4><p>Nous offrons un soutien dans les relations avec les organismes publics, afin de favoriser la compréhension mutuelle et la bonne exécution des démarches. Notre rôle de médiateur facilite la communication entre les usagers et les institutions.</p><h3>Notre expertise au service des usagers</h3><p>AAJIP-FRANCE se positionne ainsi comme un relais reconnu entre les usagers et les institutions, garantissant un accompagnement fiable, rigoureux et conforme aux exigences légales et réglementaires.</p><p>Notre approche se caractérise par :</p><ul><li><strong>L'expertise technique</strong> : maîtrise des procédures et de la réglementation</li><li><strong>L'écoute personnalisée</strong> : adaptation à chaque situation individuelle</li><li><strong>La transparence</strong> : information claire sur les démarches et leurs enjeux</li><li><strong>Le suivi dans la durée</strong> : accompagnement jusqu'à la résolution</li></ul><p>Cette mission d'accompagnement juridique et administratif constitue le cœur de notre engagement pour l'accès au droit et l'égalité des chances.</p>",
+      "author": "Équipe AAJIP",
+      "date": "2025-08-25",
+      "category": "Accompagnement",
+      "icon": "fas fa-balance-scale",
+      "tags": [
+        "juridique",
+        "administratif",
+        "accompagnement",
+        "droits",
+        "procédures"
+      ],
+      "readTime": "6 min"
+    },
+    {
+      "id": "insertion-professionnelle-accompagnement-emploi",
+      "title": "Insertion professionnelle : accompagnement vers l'emploi et la formation",
+      "excerpt": "AAJIP-FRANCE déploie un dispositif structuré d'accompagnement à l'insertion professionnelle, visant à favoriser l'accès à l'emploi durable et à la formation qualifiante.",
+      "content": "<p>AAJIP-FRANCE déploie un dispositif structuré d'accompagnement à l'insertion professionnelle, visant à favoriser l'accès à l'emploi durable et à la formation qualifiante. Consciente des enjeux liés au marché du travail et des difficultés rencontrées par certains publics, l'association met en œuvre des actions ciblées, adaptées aux besoins individuels.</p><h3>Nos interventions s'articulent autour de plusieurs axes</h3><h4>Évaluation et orientation professionnelle</h4><p>Nous procédons à l'identification des compétences, à l'analyse du parcours, et à la définition d'un projet professionnel cohérent et réaliste. Cette étape fondamentale permet de valoriser les acquis et d'orienter vers les opportunités les plus adaptées.</p><h4>Accès à la formation</h4><p>Nous assurons l'information et l'accompagnement dans la recherche de dispositifs de formation initiale, continue ou qualifiante, en partenariat avec les organismes compétents. Notre réseau de partenaires nous permet d'offrir des solutions de formation variées et adaptées.</p><h4>Accompagnement à la recherche d'emploi</h4><p>Nous apportons un appui à la rédaction de CV et lettres de motivation, préparons aux entretiens de recrutement, et facilitons la mise en relation avec les employeurs potentiels. Cette préparation optimise les chances de succès dans la recherche d'emploi.</p><h4>Suivi et insertion durable</h4><p>Nous assurons un accompagnement individualisé jusqu'à la stabilisation professionnelle, avec un suivi régulier favorisant le maintien dans l'emploi. Ce suivi post-embauche garantit la pérennité de l'insertion.</p><h3>Notre engagement pour l'autonomie socio-professionnelle</h3><p>AAJIP-FRANCE se positionne ainsi comme un acteur engagé dans la promotion de l'autonomie socio-professionnelle, en facilitant l'intégration des bénéficiaires sur le marché du travail et en valorisant leurs compétences.</p><p>Notre approche se distingue par :</p><ul><li><strong>La personnalisation</strong> : adaptation à chaque profil et situation</li><li><strong>Le partenariat</strong> : collaboration étroite avec les acteurs de l'emploi</li><li><strong>La qualité</strong> : suivi rigoureux et évaluation continue</li><li><strong>L'innovation</strong> : adaptation aux évolutions du marché du travail</li></ul><p>Cette mission d'insertion professionnelle contribue directement à l'épanouissement personnel et à l'intégration sociale de nos bénéficiaires.</p>",
+      "author": "Équipe AAJIP",
+      "date": "2025-08-22",
+      "category": "Insertion",
+      "icon": "fas fa-briefcase",
+      "tags": [
+        "insertion",
+        "emploi",
+        "formation",
+        "accompagnement",
+        "professionnel"
+      ],
+      "readTime": "7 min"
+    },
+    {
+      "id": "accompagnement-social-soutien-difficultes",
+      "title": "Accompagnement social : soutien face aux difficultés quotidiennes",
+      "excerpt": "AAJIP-FRANCE exerce une mission d'appui social destinée à répondre aux besoins essentiels des usagers et à favoriser leur inclusion au sein de la société.",
+      "content": "<p>AAJIP-FRANCE exerce une mission d'appui social destinée à répondre aux besoins essentiels des usagers et à favoriser leur inclusion au sein de la société. Cet accompagnement vise à offrir un soutien global, prenant en compte les réalités économiques, sociales et personnelles de chaque individu.</p><h3>Nos actions se déclinent principalement autour de plusieurs axes</h3><h4>Accueil, écoute et orientation</h4><p>Nous mettons à disposition un espace d'écoute bienveillant permettant d'identifier les difficultés rencontrées et d'apporter des réponses adaptées. Cette première étape d'accueil est fondamentale pour établir une relation de confiance et comprendre les besoins réels.</p><h4>Soutien dans les démarches de la vie quotidienne</h4><p>Nous apportons une aide dans l'accès aux droits sociaux, un accompagnement dans les demandes de prestations (logement, santé, allocations, aides diverses), et un appui dans la gestion administrative courante. Ces actions concrètes permettent de résoudre les difficultés immédiates.</p><h4>Accompagnement vers l'autonomie</h4><p>Nous œuvrons au renforcement des capacités des bénéficiaires à gérer leurs propres démarches, à la promotion de l'inclusion sociale et de la participation citoyenne. L'objectif est de développer l'autonomie tout en maintenant un soutien adapté.</p><h4>Médiation et coordination</h4><p>Nous facilitons la mise en relation avec les partenaires institutionnels et associatifs compétents afin de garantir une prise en charge globale et cohérente des situations. Cette coordination évite les ruptures dans les parcours d'accompagnement.</p><h3>Notre rôle d'acteur de proximité</h3><p>AAJIP-FRANCE affirme ainsi son rôle d'acteur de proximité, contribuant à la lutte contre l'exclusion sociale et à l'amélioration des conditions de vie des personnes accompagnées.</p><p>Notre approche se caractérise par :</p><ul><li><strong>La globalité</strong> : prise en compte de tous les aspects de la vie</li><li><strong>La proximité</strong> : ancrage local et connaissance du terrain</li><li><strong>L'écoute</strong> : attention portée aux besoins exprimés</li><li><strong>L'adaptation</strong> : flexibilité dans les réponses apportées</li></ul><p>Cette mission d'accompagnement social constitue un pilier essentiel de notre action pour l'inclusion et la cohésion sociale.</p>",
+      "author": "Équipe AAJIP",
+      "date": "2025-08-20",
+      "category": "Accompagnement",
+      "icon": "fas fa-hands-helping",
+      "tags": ["accompagnement", "social", "soutien", "inclusion", "proximité"],
+      "readTime": "6 min"
+    },
+    {
+      "id": "formation-education-ateliers-autonomie-citoyennete",
+      "title": "Formation et éducation : ateliers pour l'autonomie et la citoyenneté",
+      "excerpt": "AAJIP-FRANCE place la formation et l'éducation au cœur de sa mission d'accompagnement, convaincue que l'acquisition de savoirs et de compétences constitue un levier essentiel d'insertion sociale et professionnelle.",
+      "content": "<p>AAJIP-FRANCE place la formation et l'éducation au cœur de sa mission d'accompagnement, convaincue que l'acquisition de savoirs et de compétences constitue un levier essentiel d'insertion sociale et professionnelle. L'association propose ainsi des ateliers et des actions éducatives favorisant l'autonomie, l'intégration et l'exercice d'une citoyenneté active.</p><h3>Nos interventions s'organisent autour de plusieurs axes</h3><h4>Ateliers d'apprentissage et de renforcement des compétences</h4><p>Nous proposons des cours de langue, une initiation au numérique, une sensibilisation aux droits et devoirs, et le développement de compétences pratiques utiles à la vie quotidienne. Ces ateliers sont adaptés aux différents niveaux et besoins des participants.</p><h4>Formations à l'autonomie sociale et professionnelle</h4><p>Nous organisons des actions pédagogiques visant à renforcer la confiance en soi, à faciliter la prise de décision et à favoriser la gestion autonome des démarches personnelles et professionnelles. Ces formations développent les compétences transversales essentielles.</p><h4>Éducation à la citoyenneté et aux valeurs républicaines</h4><p>Nous assurons une sensibilisation aux principes de la vie en société, une promotion du vivre-ensemble, une lutte contre les discriminations et un encouragement à la participation citoyenne. Ces actions contribuent à l'intégration dans la société française.</p><h4>Partenariats éducatifs et pédagogiques</h4><p>Nous collaborons avec les établissements scolaires, organismes de formation et structures associatives pour diversifier et enrichir l'offre éducative. Ces partenariats permettent d'offrir une formation de qualité et adaptée.</p><h3>Des espaces d'apprentissage inclusifs et accessibles</h3><p>AAJIP-FRANCE s'engage ainsi à offrir des espaces d'apprentissage inclusifs et accessibles, contribuant à l'épanouissement individuel et collectif tout en renforçant la cohésion sociale.</p><p>Notre approche éducative se distingue par :</p><ul><li><strong>L'accessibilité</strong> : formation ouverte à tous, sans prérequis</li><li><strong>L'adaptation</strong> : programmes personnalisés selon les besoins</li><li><strong>La qualité</strong> : intervenants qualifiés et méthodes éprouvées</li><li><strong>L'innovation</strong> : utilisation d'outils pédagogiques modernes</li></ul><p>Cette mission de formation et d'éducation constitue un investissement dans l'avenir de nos bénéficiaires et de la société dans son ensemble.</p>",
+      "author": "Équipe AAJIP",
+      "date": "2025-08-18",
+      "category": "Formation",
+      "icon": "fas fa-graduation-cap",
+      "tags": [
+        "formation",
+        "éducation",
+        "autonomie",
+        "citoyenneté",
+        "ateliers"
+      ],
+      "readTime": "7 min"
     }
   ],
   "categories": [
