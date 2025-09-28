@@ -416,6 +416,13 @@ async function loadHomepageBlogArticles() {
         console.log('🗑️ État de chargement supprimé');
     }
     
+    // Test immédiat - remplacer par un message de test
+    blogGrid.innerHTML = '<div style="padding: 20px; background: #f0f0f0; border: 2px solid #007bff; border-radius: 8px;"><h3>🧪 TEST - JavaScript fonctionne !</h3><p>Si vous voyez ce message, le JavaScript s\'exécute correctement.</p></div>';
+    console.log('🧪 Message de test affiché');
+    
+    // Attendre 2 secondes puis continuer
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
     try {
         console.log('📡 Récupération des articles depuis articles.json...');
         const response = await fetch('articles.json');
@@ -510,6 +517,8 @@ function formatDate(dateString) {
 
 // Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('🚀 DOM chargé - script.js s\'exécute !');
+    
     // Initialiser les fonctionnalités
     lazyLoadImages();
     enhanceAccessibility();
@@ -519,6 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Délai pour s'assurer que le DOM est complètement chargé
     setTimeout(() => {
+        console.log('⏰ Délai écoulé - appel de loadHomepageBlogArticles()');
         loadHomepageBlogArticles();
     }, 100);
     
