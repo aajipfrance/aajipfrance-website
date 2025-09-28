@@ -399,10 +399,18 @@ function enhanceAccessibility() {
 
 // Chargement dynamique des articles du blog sur la page d'accueil
 async function loadHomepageBlogArticles() {
+    console.log('🔄 Chargement des articles du blog pour la page d\'accueil...');
+    
     const blogGrid = document.getElementById('homepageBlogGrid');
-    if (!blogGrid) return;
+    if (!blogGrid) {
+        console.error('❌ Élément homepageBlogGrid non trouvé');
+        return;
+    }
+    
+    console.log('✅ Élément homepageBlogGrid trouvé');
     
     try {
+        console.log('📡 Récupération des articles depuis articles.json...');
         const response = await fetch('articles.json');
         if (!response.ok) {
             throw new Error(`Erreur HTTP: ${response.status}`);
@@ -410,13 +418,17 @@ async function loadHomepageBlogArticles() {
         
         const data = await response.json();
         const articles = data.articles || [];
+        console.log(`📚 ${articles.length} articles trouvés`);
         
         // Prendre les 3 articles les plus récents
         const recentArticles = articles
             .sort((a, b) => new Date(b.date) - new Date(a.date))
             .slice(0, 3);
         
+        console.log(`📰 ${recentArticles.length} articles récents sélectionnés:`, recentArticles.map(a => a.title));
+        
         if (recentArticles.length === 0) {
+            console.log('⚠️ Aucun article récent trouvé');
             blogGrid.innerHTML = `
                 <div class="blog-empty">
                     <i class="fas fa-newspaper"></i>
@@ -448,10 +460,13 @@ async function loadHomepageBlogArticles() {
             `;
         }).join('');
         
+        console.log('🎨 Génération du HTML des articles...');
         blogGrid.innerHTML = articlesHTML;
+        console.log('✅ Articles affichés sur la page d\'accueil');
         
         // Ajouter les animations pour les nouvelles cartes
         const newCards = blogGrid.querySelectorAll('.blog-card');
+        console.log(`🎭 Animation de ${newCards.length} cartes d'articles`);
         newCards.forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
@@ -492,6 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
     enhanceAccessibility();
     
     // Charger les articles du blog sur la page d'accueil
+    console.log('🚀 Initialisation du chargement des articles...');
     loadHomepageBlogArticles();
     
     // Ajouter des effets de hover améliorés
