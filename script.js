@@ -409,6 +409,13 @@ async function loadHomepageBlogArticles() {
     
     console.log('✅ Élément homepageBlogGrid trouvé');
     
+    // Supprimer l'état de chargement initial
+    const loadingElement = blogGrid.querySelector('.blog-loading');
+    if (loadingElement) {
+        loadingElement.remove();
+        console.log('🗑️ État de chargement supprimé');
+    }
+    
     try {
         console.log('📡 Récupération des articles depuis articles.json...');
         const response = await fetch('articles.json');
@@ -479,12 +486,13 @@ async function loadHomepageBlogArticles() {
         });
         
     } catch (error) {
-        console.error('Erreur lors du chargement des articles:', error);
+        console.error('❌ Erreur lors du chargement des articles:', error);
         
         blogGrid.innerHTML = `
             <div class="blog-empty">
-                <i class="fas fa-newspaper"></i>
-                <p>Nouvel article disponible bientôt</p>
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Erreur de chargement des articles</p>
+                <small>Vérifiez la console pour plus de détails</small>
             </div>
         `;
     }
@@ -508,7 +516,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Charger les articles du blog sur la page d'accueil
     console.log('🚀 Initialisation du chargement des articles...');
-    loadHomepageBlogArticles();
+    
+    // Délai pour s'assurer que le DOM est complètement chargé
+    setTimeout(() => {
+        loadHomepageBlogArticles();
+    }, 100);
     
     // Ajouter des effets de hover améliorés
     const cards = document.querySelectorAll('.mission-card, .value-card, .principle-card');
