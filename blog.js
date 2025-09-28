@@ -125,8 +125,11 @@ async function loadArticles() {
             throw new Error('Aucun article trouvé dans le fichier JSON');
         }
         
-        // Initialiser les articles filtrés
+        // Initialiser les articles filtrés avec le tri par défaut
         blogState.filteredArticles = [...blogState.articles];
+        
+        // Appliquer le tri par défaut
+        applyFilters();
         
         // Rendre l'interface
         renderBlog();
@@ -152,6 +155,8 @@ function setupEventListeners() {
     
     if (sortFilter) {
         sortFilter.addEventListener('change', handleSortFilter);
+        // S'assurer que le tri par défaut est sélectionné
+        sortFilter.value = BLOG_CONFIG.defaultSort;
     }
     
     // Recherche
