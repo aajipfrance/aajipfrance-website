@@ -140,45 +140,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Initialisation EmailJS pour les pages avec formulaire de contact
-if (typeof emailjs !== 'undefined' && typeof EMAILJS_CONFIG !== 'undefined') {
-    emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
-    
-    // Gestion du formulaire de contact
-    const contactForm = document.querySelector('.form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Récupération des données du formulaire
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Validation basique
-            if (!data.name || !data.email || !data.message) {
-                showNotification('Veuillez remplir tous les champs obligatoires.', 'error');
-                return;
-            }
-            
-            // Envoi du message via EmailJS
-            emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, {
-                to_email: EMAILJS_CONFIG.TO_EMAIL,
-                from_name: data.name,
-                from_email: data.email,
-                from_phone: data.phone || 'Non renseigné',
-                subject: data.subject || 'Demande de contact',
-                message: data.message
-            })
-            .then(function(response) {
-                showNotification('Votre message a été envoyé avec succès !', 'success');
-                contactForm.reset();
-            })
-            .catch(function(error) {
-                showNotification('Erreur lors de l\'envoi du message. Veuillez réessayer.', 'error');
-                console.error('EmailJS error:', error);
-            });
-        });
-    }
+// Gestion du formulaire de contact (sans serveur) via mailto:
+const contactForm = document.querySelector('.form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Récupération des données du formulaire
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Validation basique
+        if (!data.name || !data.email || !data.message) {
+            showNotification('Veuillez remplir tous les champs obligatoires.', 'error');
+            return;
+        }
+        
+        const toEmail = (typeof EMAILJS_CONFIG !== 'undefined' && EMAILJS_CONFIG.TO_EMAIL)
+            ? EMAILJS_CONFIG.TO_EMAIL
+            : 'aajipfrance@gmail.com';
+        const subject = data.subject || 'Demande de contact';
+        const body = [
+            `Nom: ${data.name}`,
+            `Email: ${data.email}`,
+            `Téléphone: ${data.phone || 'Non renseigné'}`,
+            '',
+            'Message:',
+            data.message
+        ].join('\n');
+        
+        const mailtoUrl = `mailto:${encodeURIComponent(toEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailtoUrl;
+        showNotification('Votre client mail va s\'ouvrir pour envoyer le message.', 'success');
+        contactForm.reset();
+    });
 }
 
 // Fonction pour afficher les notifications
