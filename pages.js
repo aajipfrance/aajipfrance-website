@@ -162,6 +162,7 @@ if (typeof emailjs !== 'undefined' && typeof EMAILJS_CONFIG !== 'undefined') {
             
             // Envoi du message via EmailJS
             emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, {
+                to_email: EMAILJS_CONFIG.TO_EMAIL,
                 from_name: data.name,
                 from_email: data.email,
                 from_phone: data.phone || 'Non renseigné',
