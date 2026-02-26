@@ -1,0 +1,75 @@
+================================================================================
+BILAN DE MAINTENANCE - AAJIP-FRANCE
+Date : 26 février 2026
+================================================================================
+
+1. REFONTE COMPLÈTE DU SITE
+--------------------------------------------------------------------------------
+- Nouveau design system avec variables CSS (couleurs, espacements, ombres)
+- Palette : bleu #1e3a5f, accent ambré #d97706, dégradés harmonisés
+- Typographie : Plus Jakarta Sans (remplace Inter)
+- Mise à jour de toutes les pages : hero, navigation, footer, sections
+- Design responsive optimisé mobile et desktop
+- Fichiers modifiés : styles.css, blog-styles.css, article-styles.css, admin-styles.css
+
+2. CORRECTION DES LIENS (SERVEUR LOCAL)
+--------------------------------------------------------------------------------
+- Remplacement des URLs propres par les fichiers .html
+  Exemples : /a-propos → a-propos.html, /blog → blog.html
+- Mise à jour dans tous les fichiers HTML et JavaScript (script.js, blog.js, article.js)
+- Résout les erreurs "Cannot GET /a-propos", "Cannot GET /missions", etc.
+
+3. ARTICLE UNIV'R 2026 (OPPORTUNITÉ RÉFUGIÉS)
+--------------------------------------------------------------------------------
+- Section vedette sur la page d'accueil (style carte mise en avant)
+- Article ajouté dans articles.json
+- Lien vers formulaire de candidature : https://enketo.unhcr.org/x/ryAecqtc
+- Nouvelle catégorie "Opportunités" créée
+
+4. OPTIMISATION MOBILE - NAVIGATION
+--------------------------------------------------------------------------------
+- Logo masqué sous "Nous contacter" sur mobile (display: none pour .hero-image)
+- Logo + texte "AAJIP-FRANCE" dans la navbar rendus cliquables
+- Redirection vers index.html sur toutes les pages
+
+5. CORRECTION AFFICHAGE NEWS SUR MOBILE
+--------------------------------------------------------------------------------
+- Contenu statique des 3 derniers articles intégré directement dans le HTML
+- Script renforcé : vérification hamburger/navMenu avant addEventListener
+- Timeout de 8 secondes sur le fetch avec AbortController
+- Message d'erreur avec lien vers le blog en cas d'échec du chargement
+
+6. ARTICLE DÉCLARATION JOURNAL OFFICIEL
+--------------------------------------------------------------------------------
+- Article créé dans articles.json : "Association déclarée et publiée au JO"
+- Liens vers les PDF : Recepisse_CR.pdf et Journal_officiel.pdf
+- Section dédiée sur la page d'accueil (style annonce prioritaire)
+
+7. RESTRUCTURATION PAGE D'ACCUEIL
+--------------------------------------------------------------------------------
+- Suppression de la section News (grille d'articles)
+- Ajout de la section "Déclaration au Journal Officiel" sous UNIV'R 2026
+- Conservation de la navigation rapide "Découvrir l'AAJIP-FRANCE" avec lien Blog
+
+8. DÉPÔT GIT
+--------------------------------------------------------------------------------
+- Commit effectué : "Refonte complète du site + Article UNIV'R 2026"
+- Push vers origin/main réussi
+
+================================================================================
+FICHIERS MODIFIÉS
+================================================================================
+- index.html, a-propos.html, missions.html, actions.html
+- contact.html, donation.html, blog.html, article.html, admin.html
+- styles.css, blog-styles.css, article-styles.css, admin-styles.css
+- script.js, blog.js, article.js
+- articles.json
+- documents/ (dossier créé pour PDF, README.txt)
+
+================================================================================
+FICHIERS À PLACER À LA RACINE
+================================================================================
+- Recepisse_CR.pdf
+- Journal_officiel.pdf
+
+================================================================================

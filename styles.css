@@ -246,6 +246,8 @@ a {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  text-decoration: none;
+  color: inherit;
 }
 
 .logo {
@@ -564,6 +566,13 @@ a {
 
 .featured-highlights i {
   color: var(--color-accent);
+}
+
+.featured-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
 }
 
 .btn-featured {
@@ -1018,7 +1027,18 @@ a {
   color: #dc2626;
 }
 
-/* Quick nav */
+/* Quick nav section */
+.quick-nav-section {
+  padding: var(--space-12) 0;
+  background: var(--color-bg);
+}
+
+.quick-nav-section .quick-nav {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
 .quick-nav {
   margin-top: var(--space-16);
   padding-top: var(--space-12);
@@ -1460,6 +1480,10 @@ a {
 @media (max-width: 768px) {
   :root {
     --container-padding: 1rem;
+  }
+
+  .hero-image {
+    display: none;
   }
 
   .donation-banner-content {

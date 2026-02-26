@@ -2,10 +2,12 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+}
 
 // Fonction pour fermer la bande défilante des dons (temporairement)
 function closeDonationBanner() {
@@ -91,8 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Fermer le menu mobile en cliquant sur un lien
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
+    if (hamburger && navMenu) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
 }));
 
 // Navigation smooth scroll - seulement pour les liens internes
@@ -399,19 +403,26 @@ function enhanceAccessibility() {
 
 // Chargement dynamique des articles du blog sur la page d'accueil
 async function loadHomepageBlogArticles() {
-    console.log('🔄 Chargement des articles du blog pour la page d\'accueil...');
-    
     const blogGrid = document.getElementById('homepageBlogGrid');
-    if (!blogGrid) {
-        console.error('❌ Élément homepageBlogGrid non trouvé');
-        return;
-    }
+    if (!blogGrid) return;
     
-    console.log('✅ Élément homepageBlogGrid trouvé');
+    const showError = (msg) => {
+        blogGrid.innerHTML = `
+            <div class="blog-empty">
+                <i class="fas fa-newspaper"></i>
+                <p>${msg}</p>
+                <a href="blog.html" class="btn btn-outline" style="margin-top: 1rem;">Voir le blog</a>
+            </div>
+        `;
+    };
     
     try {
-        console.log('📡 Récupération des articles depuis articles.json...');
-        const response = await fetch('articles.json');
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
+        
+        const response = await fetch('articles.json', { signal: controller.signal });
+        clearTimeout(timeoutId);
+        
         if (!response.ok) {
             throw new Error(`Erreur HTTP: ${response.status}`);
         }
@@ -479,15 +490,7 @@ async function loadHomepageBlogArticles() {
         });
         
     } catch (error) {
-        console.error('❌ Erreur lors du chargement des articles:', error);
-        
-        blogGrid.innerHTML = `
-            <div class="blog-empty">
-                <i class="fas fa-exclamation-triangle"></i>
-                <p>Erreur de chargement des articles</p>
-                <small>Vérifiez la console pour plus de détails</small>
-            </div>
-        `;
+        showError('Les articles n\'ont pas pu être chargés. Consultez le blog pour voir nos actualités.');
     }
 }
 

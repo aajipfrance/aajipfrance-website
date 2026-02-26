@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "id": "declaration-journal-officiel",
+      "title": "AAJIP-FRANCE : association déclarée et publiée au Journal Officiel",
+      "excerpt": "L'AAJIP-FRANCE est une association loi 1901 officiellement déclarée en préfecture et publiée au Journal Officiel de la République française. Cette reconnaissance garantit notre conformité légale et notre transparence.",
+      "content": "<p>L'<strong>AAJIP-FRANCE</strong> (Association d'Accompagnement Juridique et d'Insertion Professionnelle en France) est une association régie par la loi du 1er juillet 1901. Nous avons la fierté de vous annoncer notre déclaration officielle en préfecture et notre publication au Journal Officiel de la République française.</p><h3>Une reconnaissance officielle</h3><p>Cette publication atteste de notre existence légale et de notre conformité aux exigences réglementaires applicables aux associations en France. Elle garantit notre transparence et notre légitimité en tant qu'acteur de l'accompagnement juridique et de l'insertion professionnelle.</p><h3>Documents à consulter</h3><p>Vous pouvez consulter et télécharger les documents officiels ci-dessous :</p><ul><li><strong>Récépissé de déclaration</strong> : attestation de dépôt en préfecture</li><li><strong>Publication au Journal Officiel</strong> : parution officielle de notre association</li></ul><p><a href=\"Recepisse_CR.pdf\" target=\"_blank\" rel=\"noopener noreferrer\"><i class=\"fas fa-file-pdf\"></i> Télécharger le récépissé de déclaration (PDF)</a></p><p><a href=\"Journal_officiel.pdf\" target=\"_blank\" rel=\"noopener noreferrer\"><i class=\"fas fa-file-pdf\"></i> Télécharger la publication au Journal Officiel (PDF)</a></p><h3>Une association au service de tous</h3><p>Cette reconnaissance renforce notre engagement à accompagner les personnes en difficulté avec professionnalisme et dans le respect des cadres légaux. Nous intervenons sur tout le territoire français pour l'accompagnement juridique, l'insertion professionnelle et l'accompagnement social.</p><p>Pour toute question sur notre statut ou nos actions, n'hésitez pas à <a href=\"contact.html\">nous contacter</a>.</p>",
+      "author": "Équipe AAJIP",
+      "date": "2026-02-25",
+      "category": "Actualités",
+      "icon": "fas fa-stamp",
+      "tags": ["Journal Officiel", "association", "loi 1901", "déclaration", "transparence"],
+      "readTime": "3 min"
+    },
+    {
       "id": "univr-2026",
       "title": "🎓 Opportunité pour les jeunes réfugiés : Programme UNIV'R 2026",
       "excerpt": "Le programme UNIV'R 2026 permet à des réfugiés de poursuivre leurs études supérieures en France avec exonération des frais, logement, bourse et couverture sociale. Date limite : 15 mars 2026.",

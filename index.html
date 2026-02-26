@@ -106,10 +106,10 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
+            <a href="index.html" class="nav-logo">
                 <img src="logo.jpg" alt="Logo AAJIP-FRANCE" class="logo">
                 <span class="logo-text">AAJIP-FRANCE</span>
-            </div>
+            </a>
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link active">Accueil</a>
@@ -191,32 +191,51 @@
         </div>
     </section>
 
-    <!-- Section Blog -->
-    <section id="blog" class="blog">
+    <!-- Déclaration au Journal Officiel -->
+    <section class="featured-opportunity featured-declaration" id="declaration-jo">
         <div class="container">
-            <h2 class="section-title">News</h2>
-            <p class="section-subtitle">Nos trois derniers articles : actualités, témoignages et informations sur nos actions</p>
-            <div class="blog-grid" id="homepageBlogGrid">
-                <!-- Les articles seront chargés dynamiquement ici -->
-                <div class="blog-loading">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <p>Chargement des articles...</p>
+            <div class="featured-card">
+                <span class="featured-badge"><i class="fas fa-stamp"></i> Reconnaissance officielle</span>
+                <div class="featured-content">
+                    <div class="featured-icon">
+                        <i class="fas fa-scale-balanced"></i>
+                    </div>
+                    <div class="featured-text">
+                        <h2 class="featured-title">Association déclarée et publiée au Journal Officiel</h2>
+                        <p class="featured-excerpt">
+                            L'AAJIP-FRANCE est une association loi 1901 officiellement déclarée en préfecture et publiée au Journal Officiel de la République française. Cette reconnaissance atteste de notre conformité légale et de notre transparence.
+                        </p>
+                        <div class="featured-highlights">
+                            <span><i class="fas fa-file-contract"></i> Récépissé de déclaration</span>
+                            <span><i class="fas fa-newspaper"></i> Publication au Journal Officiel</span>
+                        </div>
+                        <div class="featured-buttons">
+                            <a href="Recepisse_CR.pdf" class="btn btn-featured" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-file-pdf"></i>
+                                Récépissé de déclaration
+                            </a>
+                            <a href="Journal_officiel.pdf" class="btn btn-featured" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-file-pdf"></i>
+                                Publication au Journal Officiel
+                            </a>
+                        </div>
+                        <p class="featured-note">Documents officiels téléchargeables en PDF.</p>
+                    </div>
                 </div>
             </div>
-            <div class="blog-cta">
-                <a href="blog.html" class="btn btn-secondary">
-                    <i class="fas fa-newspaper"></i>
-                    Voir tous les articles
-                </a>
-            </div>
-            
-            <!-- Navigation rapide vers les autres sections -->
+        </div>
+    </section>
+
+    <!-- Navigation rapide -->
+    <section class="quick-nav-section">
+        <div class="container">
             <div class="quick-nav">
                 <h3>Découvrir l'AAJIP-FRANCE</h3>
                 <div class="quick-nav-buttons">
                     <a href="a-propos.html" class="btn btn-outline">À propos</a>
                     <a href="missions.html" class="btn btn-outline">Nos missions</a>
                     <a href="actions.html" class="btn btn-outline">Nos actions</a>
+                    <a href="blog.html" class="btn btn-outline">Blog</a>
                     <a href="donation.html" class="btn btn-outline">Faire un don</a>
                     <a href="contact.html" class="btn btn-outline">Contact</a>
                 </div>
