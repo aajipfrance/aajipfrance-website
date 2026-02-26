@@ -394,6 +394,7 @@ a {
 
 .hero-buttons {
   display: flex;
+  justify-content: center;
   gap: var(--space-4);
   flex-wrap: wrap;
 }
@@ -601,20 +602,72 @@ a {
   color: rgba(255, 255, 255, 0.75);
 }
 
+.featured-read-more {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  padding: var(--space-2) 0;
+  margin-bottom: var(--space-4);
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
+  .featured-opportunity {
+    padding: var(--space-6) 0;
+  }
+
+  .featured-card {
+    padding: var(--space-6);
+  }
+
   .featured-content {
     flex-direction: column;
-    gap: var(--space-6);
+    gap: var(--space-4);
   }
 
   .featured-icon {
-    width: 64px;
-    height: 64px;
-    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+
+  .featured-title {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .featured-excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: var(--space-2);
+  }
+
+  .featured-card.is-expanded .featured-excerpt {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+
+  .featured-read-more {
+    display: inline-block;
+  }
+
+  .featured-more {
+    display: none;
+  }
+
+  .featured-card.is-expanded .featured-more {
+    display: block;
   }
 
   .featured-highlights {
     flex-direction: column;
+    margin-bottom: var(--space-4);
   }
 }
 
@@ -1444,6 +1497,14 @@ a {
   padding-top: var(--space-8);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: var(--font-size-sm);
+}
+
+/* Masquer Nos missions et Nos valeurs sur mobile */
+@media (max-width: 768px) {
+  .footer-content .footer-section:nth-child(2),
+  .footer-content .footer-section:nth-child(3) {
+    display: none;
+  }
 }
 
 /* ============================================

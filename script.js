@@ -99,6 +99,17 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     }
 }));
 
+// Lire plus / Lire moins sur les sections featured (mobile)
+document.querySelectorAll('.featured-read-more').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const card = btn.closest('.featured-card');
+        if (!card) return;
+        const isExpanded = card.classList.toggle('is-expanded');
+        btn.textContent = isExpanded ? 'Lire moins' : 'Lire plus';
+        btn.setAttribute('aria-expanded', isExpanded);
+    });
+});
+
 // Navigation smooth scroll - seulement pour les liens internes
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
