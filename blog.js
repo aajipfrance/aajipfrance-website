@@ -284,7 +284,7 @@ function createArticleCard(article) {
                 </div>
                 <h3>${article.title}</h3>
                 <p>${excerpt}</p>
-                <a href="/article?id=${article.id}" class="blog-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                <a href="article.html?id=${article.id}" class="blog-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
             </div>
         </article>
     `;
@@ -367,7 +367,7 @@ function renderRecentPosts() {
                 <i class="${article.icon}"></i>
             </div>
             <div class="recent-post-content">
-                <h4><a href="/article?id=${article.id}">${article.title}</a></h4>
+                <h4><a href="article.html?id=${article.id}">${article.title}</a></h4>
                 <div class="date">${formatDate(article.date)}</div>
             </div>
         </div>

@@ -409,20 +409,6 @@ async function loadHomepageBlogArticles() {
     
     console.log('✅ Élément homepageBlogGrid trouvé');
     
-    // Supprimer l'état de chargement initial
-    const loadingElement = blogGrid.querySelector('.blog-loading');
-    if (loadingElement) {
-        loadingElement.remove();
-        console.log('🗑️ État de chargement supprimé');
-    }
-    
-    // Test immédiat - remplacer par un message de test
-    blogGrid.innerHTML = '<div style="padding: 20px; background: #f0f0f0; border: 2px solid #007bff; border-radius: 8px;"><h3>🧪 TEST - JavaScript fonctionne !</h3><p>Si vous voyez ce message, le JavaScript s\'exécute correctement.</p></div>';
-    console.log('🧪 Message de test affiché');
-    
-    // Attendre 2 secondes puis continuer
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
     try {
         console.log('📡 Récupération des articles depuis articles.json...');
         const response = await fetch('articles.json');
@@ -468,7 +454,7 @@ async function loadHomepageBlogArticles() {
                         </div>
                         <h3>${article.title}</h3>
                         <p>${article.excerpt}</p>
-                        <a href="/article?id=${article.id}" class="blog-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                        <a href="article.html?id=${article.id}" class="blog-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             `;

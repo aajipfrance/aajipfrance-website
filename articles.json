@@ -1,6 +1,19 @@
 {
   "articles": [
     {
+      "id": "univr-2026",
+      "title": "🎓 Opportunité pour les jeunes réfugiés : Programme UNIV'R 2026",
+      "excerpt": "Le programme UNIV'R 2026 permet à des réfugiés de poursuivre leurs études supérieures en France avec exonération des frais, logement, bourse et couverture sociale. Date limite : 15 mars 2026.",
+      "content": "<p>Tu es réfugié(e) et tu rêves de poursuivre tes études en France ? Le programme UNIV'R 2026 est une opportunité exceptionnelle à ne pas manquer !</p><p>Porté par Campus France, le HCR et l'Agence universitaire de la Francophonie, ce programme permet à des réfugiés résidant dans un premier pays d'asile de poursuivre leurs études supérieures en France avec un accompagnement complet.</p><h3>Ce que le programme offre</h3><ul><li>🎓 Exonération des frais de scolarité</li><li>✈️ Prise en charge des frais de voyage</li><li>🏠 Accès à un logement étudiant</li><li>💰 Bourse pour couvrir les frais de vie</li><li>🩺 Couverture sociale</li><li>📄 Exemption des frais de visa</li></ul><h3>Dates importantes</h3><ul><li><strong>Rentrée :</strong> septembre 2026</li><li><strong>Date limite de candidature :</strong> 15 mars 2026 à 23h59 (heure de Paris)</li></ul><h3>Conditions principales</h3><ul><li>Être reconnu officiellement réfugié (par le HCR ou l'État du pays d'accueil)</li><li>Résider dans un premier pays d'asile hors Union européenne</li><li>Avoir maximum 30 ans</li><li>Être titulaire d'un diplôme Bac +3 minimum (Licence/Bachelor)</li><li>Justifier d'un niveau B2 en français ou en anglais</li></ul><h3>⚠️ Attention</h3><ul><li>Un seul formulaire par personne</li><li>Le formulaire doit être complété en une seule fois</li><li>Les demandeurs d'asile ne sont pas éligibles</li></ul><p>🌍 C'est une vraie chance pour continuer ses études dans 14 établissements d'enseignement supérieur en France.</p><p>Si tu connais un(e) jeune réfugié(e) motivé(e) et éligible, partage cette opportunité autour de toi ❤️</p><p><strong><a href=\"https://enketo.unhcr.org/x/ryAecqtc\" target=\"_blank\" rel=\"noopener noreferrer\">👉 Consulte tous les détails et accède au formulaire de candidature</a></strong></p>",
+      "author": "Équipe AAJIP",
+      "date": "2026-02-26",
+      "category": "Opportunités",
+      "icon": "fas fa-graduation-cap",
+      "tags": ["UNIV'R", "réfugiés", "études", "France", "HCR", "Campus France"],
+      "readTime": "5 min",
+      "externalUrl": "https://enketo.unhcr.org/x/ryAecqtc"
+    },
+    {
       "id": "ateliers-formation-autonomie",
       "title": "Nos ateliers de formation : développer l'autonomie et la citoyenneté",
       "excerpt": "Présentation de nos programmes de formation destinés à favoriser l'autonomie et l'engagement citoyen de nos bénéficiaires dans la société française.",
@@ -206,6 +219,10 @@
     }
   ],
   "categories": [
+    {
+      "name": "Opportunités",
+      "description": "Opportunités et programmes pour les réfugiés et personnes en difficulté"
+    },
     {
       "name": "Actualités",
       "description": "Actualités et nouveautés de l'association"
