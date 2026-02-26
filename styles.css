@@ -359,10 +359,10 @@ a {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-padding);
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: var(--space-16);
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   position: relative;
   z-index: 1;
 }
@@ -388,27 +388,14 @@ a {
   line-height: var(--line-height-relaxed);
   color: rgba(255, 255, 255, 0.85);
   max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-buttons {
   display: flex;
   gap: var(--space-4);
   flex-wrap: wrap;
-}
-
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-logo {
-  width: min(300px, 100%);
-  aspect-ratio: 1;
-  border-radius: var(--radius-xl);
-  object-fit: cover;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
-  border: 3px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Buttons */
@@ -575,9 +562,21 @@ a {
   margin-bottom: var(--space-4);
 }
 
+@media (max-width: 768px) {
+  .featured-buttons {
+    flex-direction: column;
+  }
+
+  .featured-buttons .btn-featured {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .btn-featured {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-2);
   background: var(--color-accent) !important;
   color: var(--color-primary-dark) !important;
@@ -586,6 +585,7 @@ a {
   font-size: var(--font-size-base) !important;
   border: none !important;
   box-shadow: var(--shadow-lg) !important;
+  text-decoration: none !important;
 }
 
 .btn-featured:hover {
@@ -1031,6 +1031,12 @@ a {
 .quick-nav-section {
   padding: var(--space-12) 0;
   background: var(--color-bg);
+}
+
+@media (max-width: 768px) {
+  .quick-nav-section {
+    display: none;
+  }
 }
 
 .quick-nav-section .quick-nav {
@@ -1482,10 +1488,6 @@ a {
     --container-padding: 1rem;
   }
 
-  .hero-image {
-    display: none;
-  }
-
   .donation-banner-content {
     padding: var(--space-4);
   }
@@ -1539,10 +1541,6 @@ a {
 
   .hero-buttons {
     justify-content: center;
-  }
-
-  .hero-logo {
-    width: min(220px, 80%);
   }
 
   .about-content {
